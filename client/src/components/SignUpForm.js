@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function SignUpForm() {
+function SignUpForm({user, setUser}) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,12 +26,12 @@ function SignUpForm() {
         age,  
         email,
         password,
-      //   password_confirmation: passwordConfirmation,
+
       }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => console.log(user));
+        r.json().then((user) => setUser(user));
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -74,20 +74,11 @@ function SignUpForm() {
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           /><br/>
-
-          {/* <label htmlFor="password">Password Confirmation</label>
-          <input
-            type="password"
-            id="password_confirmation"
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-            autoComplete="current-password"
-          /><br/> */}
           <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
 
-          {/* {errors.map((err) => (
+          {errors.map((err) => (
             <p style={{color: "red"}} key={err}>{err}</p>
-          ))} */}
+          ))}
 
       </form>
       <button onClick={() => navigate("/")}>Cancel</button>

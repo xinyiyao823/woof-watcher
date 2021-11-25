@@ -1,20 +1,21 @@
 
 import './App.css';
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from './components/LoginPage'
 import SignUpForm from './components/SignUpForm'
 import Homepage from './components/Homepage'
-import Navbar from './components/Navbar'
+
 
 const App = () => {
+  const [user, setUser] = useState(null)
   return (
     <Router>
       <div className="App">
-        <Navbar />
         <Routes>
-          <Route path="/" element={<LoginPage />}/>
-          <Route path="/signup" element={<SignUpForm />}/>
-          <Route path="/home" element={<Homepage />}/>
+          <Route path="/" element={<LoginPage user={user} setUser={setUser} />}/>
+          <Route path="/signup" element={<SignUpForm user={user} setUser={setUser}/>}/>
+          <Route path="/home" element={<Homepage user={user} setUser={setUser}/>}/>
         </Routes>
       </div>
     </Router>

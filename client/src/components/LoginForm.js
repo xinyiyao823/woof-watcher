@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import {useNavigate} from "react-router-dom";
 
 
-function LoginForm() {
+function LoginForm({user, setUser}) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState("")
     const [isLoading, setIsLoading] = useState(false);
-    const [user, setUser] = useState(null)
+    // const [user, setUser] = useState(null)
     
     const navigate = useNavigate();
     // console.log(errors)
@@ -24,6 +24,8 @@ function LoginForm() {
         setIsLoading(false);
         if (r.ok) {
           r.json().then((user) =>  setUser(user));
+          navigate("/home")
+          console.log(errors)
         } else {
           r.json().then((error) => setErrors(error));
         }
@@ -48,12 +50,12 @@ function LoginForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             /><br/>
-            {/* <p style={{color: "red"}}>{errors.errors}</p> */}
+            <p style={{color: "red"}}>{errors.errors}</p>
             <button 
             variant="fill" 
             color="primary" 
             type="submit"
-            onClick={() => navigate('/home')}
+            // onClick={() => navigate('/home')}
             >
               {isLoading ? "Loading..." : "Login"}
             </button>

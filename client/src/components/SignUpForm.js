@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 function SignUpForm() {
 
-  const [fullName, setFullName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
@@ -22,7 +22,7 @@ function SignUpForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        fullName,
+        name,
         age,  
         email,
         password,
@@ -47,8 +47,8 @@ function SignUpForm() {
             type="text"
             id="name"
             autoComplete="off"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           /><br/>
           <label htmlFor="name">Age</label>
           <input

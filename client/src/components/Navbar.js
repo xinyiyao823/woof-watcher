@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Navbar({user, setUser}) {
+function Navbar({setUser}) {
     const navigate = useNavigate();
-    
+
     const handleLogout = () => {
         fetch('/logout', {
             method: 'DELETE'

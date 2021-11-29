@@ -5,9 +5,9 @@ function Sitter({name, hourly_rate, location}) {
     return (
         <SitterDiv>
             <h2>{name}</h2>
-            <h3>Hourly Rate: {hourly_rate}</h3>
+            <h3>Hourly Rate: ${hourly_rate}</h3>
             <h3>Location: {location}</h3>
-            <button>Book Appointment</button>
+            <button>Book Appointment 🐾</button>
         </SitterDiv>
     )
 }

@@ -7,6 +7,7 @@ import SitterList from './SitterList'
 function Homepage({user, setUser}) {
 
     const [sitters, showSitters] = useState([])
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         fetch("/sitters")
@@ -15,14 +16,17 @@ function Homepage({user, setUser}) {
     }, [])
     
 
+    const searchedSitters = sitters.filter(sitter => {
+        return sitter.name.toLowerCase().includes(search.toLowerCase())
+    })
 
     return (
         <div>
             
             <Navbar user={user} setUser={setUser}/>
-            <SearchBar />
+            <SearchBar search={search} setSearch={setSearch}/>
             <button>View My Appointments</button>
-            <SitterList sitters={sitters} />
+            <SitterList sitters={sitters} searchedSitters={searchedSitters}/>
             {/* <DropDown /> */}
         </div>
     )

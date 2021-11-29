@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 
 function Navbar({setUser}) {
     const navigate = useNavigate();
@@ -13,10 +14,16 @@ function Navbar({setUser}) {
 
     }
     return (
-        <div>
+        <Nav>
             <button onClick={handleLogout}>Logout</button>
-        </div>
+        </Nav>
     )
 }
 
 export default Navbar
+
+const Nav = styled.div`
+    background-color: #00968C;
+`
+
+

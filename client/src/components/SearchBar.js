@@ -1,14 +1,18 @@
 import React from 'react'
 import {BsSearch} from 'react-icons/bs'
 
-function SearchBar() {
+function SearchBar({search, setSearch}) {
     return (
-        <div>
+        <div className="searchbar">
+            <label htmlFor="search">Search Plants:</label>
             <input
-            placeholder="Look for dog-sitters..."
-
+                type="text"
+                id="search"
+                placeholder="Type a name to search..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
             />
-            <button><BsSearch /></button>
+            <button>{<BsSearch />}</button>
         </div>
     )
 }

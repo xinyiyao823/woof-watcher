@@ -1,6 +1,8 @@
 import React from 'react'
 import LoginForm from './LoginForm'
+import Calendar from './AppointmentCalendar'
 import {useNavigate} from "react-router-dom";
+
 
 function Login({user, setUser}) {
     const navigate = useNavigate()
@@ -18,6 +20,7 @@ function Login({user, setUser}) {
             Sign Up
           </button>
           </p>
+
         </div>
     )
 }

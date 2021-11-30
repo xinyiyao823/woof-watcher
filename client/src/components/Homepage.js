@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import SearchBar from './SearchBar'
 import DropDown from './DropDown'
 import SitterList from './SitterList'
+// import AppointmentCalendar from './Calendar'
 import {fetchSitters} from '../redux/sittersSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -49,6 +50,9 @@ function Homepage({user, setUser}) {
             <button>View My Appointments</button>
             <DropDown sitterRates={sitterRates} sortPrice={sortPrice} setSortPrice={setSortPrice} />
             <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} />
+
+            <br/>
+            
             
         </div>
     )

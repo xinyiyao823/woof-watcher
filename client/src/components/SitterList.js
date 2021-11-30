@@ -2,7 +2,7 @@ import React from 'react'
 import Sitter from './Sitter'
 // import styled from 'styled-components'
 
-function SitterList({sitters, searchedSitters}) {
+function SitterList({sitters, searchedSitters, sortedSitters}) {
     return (
         <div>
             {searchedSitters.map(sitter => <Sitter name={sitter.name} hourly_rate={sitter.hourly_rate} location={sitter.location} />)}

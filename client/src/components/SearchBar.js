@@ -4,7 +4,7 @@ import {BsSearch} from 'react-icons/bs'
 function SearchBar({search, setSearch}) {
     return (
         <div className="searchbar">
-            <label htmlFor="search">Search Plants:</label>
+            <label htmlFor="search">Search Dog-Sitters:</label>
             <input
                 type="text"
                 id="search"

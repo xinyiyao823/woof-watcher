@@ -20,14 +20,19 @@ function Homepage({user, setUser}) {
         return sitter.name.toLowerCase().includes(search.toLowerCase())
     })
 
+    const sitterRates = sitters.map(sitter => {
+        return sitter.hourly_rate
+    })
+
     return (
         <div>
             
             <Navbar user={user} setUser={setUser}/>
             <SearchBar search={search} setSearch={setSearch}/>
             <button>View My Appointments</button>
+            <DropDown sitterRates={sitterRates} />
             <SitterList sitters={sitters} searchedSitters={searchedSitters}/>
-            {/* <DropDown /> */}
+            
         </div>
     )
 }

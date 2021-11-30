@@ -1,6 +1,6 @@
 import React from 'react'
 import Sitter from './Sitter'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 function SitterList({sitters, searchedSitters}) {
     return (
@@ -12,6 +12,6 @@ function SitterList({sitters, searchedSitters}) {
 
 export default SitterList
 
-const SitterDiv = styled.div`
-    display: flex;
-`
+// const SitterDiv = styled.div`
+//     display: flex;
+// `

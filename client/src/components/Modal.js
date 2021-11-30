@@ -35,7 +35,7 @@ function Modal({ modalOpen, setModalOpen}) {
           >
             Cancel
           </button>
-          <button onClick={handleClick}>Save</button>
+          <button onClick={handleClick}>Create</button>
         </div>
       </div>
     </div>

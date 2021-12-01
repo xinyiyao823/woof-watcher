@@ -13,6 +13,12 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    def destroy 
+        appointment = Appointment.find(params[:id])
+        appointment.destroy
+        head :no_content
+    end
+
     private 
 
     def appointment_params

@@ -20,12 +20,14 @@ function LoginForm({user, setUser}) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
-      }).then((r) => {
+        }).then((r) => {
         setIsLoading(false);
         if (r.ok) {
-          r.json().then((user) =>  setUser(user));
+          r.json().then((user) =>  {
+            console.log(user)
+            setUser(user)
+          });
           navigate("/home")
-          console.log(errors)
         } else {
           r.json().then((error) => setErrors(error));
         }

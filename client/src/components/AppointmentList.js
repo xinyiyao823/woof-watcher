@@ -1,10 +1,12 @@
 import React from 'react'
 import Appointment from './Appointment'
 
-function AppointmentList() {
+function AppointmentList({user, appointment}) {
+    console.log(user.appointments)
     return (
         <div>
-            <Appointment />
+            <h3>{user.name}'s Appointments</h3>
+            {user.appointments.map(appointment => <Appointment appointment={appointment} />)}
         </div>
     )
 }

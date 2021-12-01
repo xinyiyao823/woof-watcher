@@ -3,16 +3,17 @@ import Navbar from './Navbar'
 import SearchBar from './SearchBar'
 import DropDown from './DropDown'
 import SitterList from './SitterList'
-// import AppointmentCalendar from './Calendar'
+import { useNavigate } from 'react-router-dom'
 import {fetchSitters} from '../redux/sittersSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-function Homepage({user, setUser}) {
+function Homepage({user, setUser, appointment, setAppointments}) {
     const dispatch = useDispatch()
     // const [sitters, showSitters] = useState([])
     const [search, setSearch] = useState("")
     const [sortPrice, setSortPrice] = useState(null);
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch(fetchSitters('/sitters'))
@@ -47,9 +48,9 @@ function Homepage({user, setUser}) {
             
             <Navbar user={user} setUser={setUser}/>
             <SearchBar search={search} setSearch={setSearch}/>
-            <button>View My Appointments</button>
+            <button onClick={() => navigate('/appointments')}>View My Appointments</button>
             <DropDown sitterRates={sitterRates} sortPrice={sortPrice} setSortPrice={setSortPrice} />
-            <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} />
+            <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} user={user} appointment={appointment} setAppointments={setAppointments}/>
 
             <br/>
             

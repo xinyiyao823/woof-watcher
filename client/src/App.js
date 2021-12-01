@@ -10,14 +10,16 @@ import AppointmentList from './components/AppointmentList'
 
 const App = () => {
   const [user, setUser] = useState(null)
+  const [appointment, setAppointments] = useState([])
+  // console.log(user)
   return (
     <Router>
       <div className="App">
         <Routes>
           <Route path="/" element={<LoginPage user={user} setUser={setUser} />}/>
           <Route path="/signup" element={<SignUpForm user={user} setUser={setUser}/>}/>
-          <Route path="/home" element={<Homepage user={user} setUser={setUser}/>}/>
-          <Route path="/appointments" element={<AppointmentList />}/>
+          <Route path="/home" element={<Homepage user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments}/>}/>
+          <Route path="/appointments" element={<AppointmentList user={user} appointment={appointment} setAppointments={setAppointments}/>}/>
         </Routes>
       </div>
     </Router>

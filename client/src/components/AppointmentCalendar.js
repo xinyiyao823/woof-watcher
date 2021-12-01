@@ -1,12 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Calendar from 'react-calendar'
 
-function AppointmentCalendar() {
-    const [date, setDate] = useState(new Date())
-
-    const onChange = () => {
-        setDate(date)
-    }
+function AppointmentCalendar({date, onChange}) {
+    
 
     return (
         <div>
@@ -15,6 +11,7 @@ function AppointmentCalendar() {
                 onChange={onChange}
                 value={date}
             />
+            {console.log(date.toString())}
         </div>
     )
 }

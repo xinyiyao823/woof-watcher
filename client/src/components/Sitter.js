@@ -4,7 +4,7 @@ import Modal from './Modal';
 import { IoPaw } from 'react-icons/io5';
 
 
-function Sitter({name, hourly_rate, location}) {
+function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setAppointments}) {
     const [modalOpen, setModalOpen] = useState(false)
 
     const handleClick = () => {
@@ -16,8 +16,8 @@ function Sitter({name, hourly_rate, location}) {
             <h2>{name}</h2>
             <h3>Hourly Rate: ${hourly_rate}</h3>
             <h3>Location: {location}</h3>
-            <button onClick={handleClick}>Book Appointment <IoPaw /></button>
-            {modalOpen && <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}/>}
+            <Button onClick={handleClick}>Book Appointment <IoPaw /></Button>
+            {modalOpen && <Modal sitter_id={sitter_id} modalOpen={modalOpen} setModalOpen={setModalOpen} user={user} appointment={appointment} setAppointments={setAppointments}/>}
         </SitterDiv>
     )
 }
@@ -27,7 +27,11 @@ export default Sitter
 const SitterDiv = styled.div`
     border: 2px solid;
     width: 15%;
-    margin: 20px;
+    margin: 25px;
+    padding: 10px;
     display: inline-block;
     float: left;
+`
+const Button = styled.button`
+margin-bottom: 15px;
 `

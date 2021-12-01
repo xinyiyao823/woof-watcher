@@ -1,7 +1,18 @@
 import React from 'react'
 import Appointment from './Appointment'
 
-function AppointmentList({user, appointment, handleDeleteAppt}) {
+function AppointmentList({user, appointment, setAppointments}) {
+
+    const handleDeleteAppt = (selectedAppt) => {
+        fetch(`/appointments/${selectedAppt.id}`, { 
+          method: 'DELETE'
+        })
+     
+        let remainingAppointments = (appointment) => appointment.filter(appt => appt.id !== selectedAppt.id)
+        setAppointments(remainingAppointments)
+        window.location.reload()
+      }
+
     console.log(user.appointments)
     return (
         <div>

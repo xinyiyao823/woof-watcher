@@ -46,7 +46,7 @@ function Homepage({user, setUser, appointment, setAppointments}) {
     return (
         <div>
             
-            <Navbar user={user} setUser={setUser}/>
+            {/* <Navbar user={user} setUser={setUser}/> */}
             <SearchBar search={search} setSearch={setSearch}/>
             <button onClick={() => navigate('/appointments')}>View My Appointments</button>
             <DropDown sitterRates={sitterRates} sortPrice={sortPrice} setSortPrice={setSortPrice} />

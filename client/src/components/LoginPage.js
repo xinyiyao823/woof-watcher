@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LoginForm from './LoginForm'
+import LoginNavbar from './LoginNavbar'
 import {useNavigate} from "react-router-dom";
 
 
 function Login({user, setUser}) {
     const navigate = useNavigate()
-    // const [showLogin, setShowLogin] = useState(true);
+    const [showLogin, setShowLogin] = useState(false );
 
     return (
         <div className="login-container">
-          <LoginForm user={user} setUser={setUser}/>
-          <p>
+          <LoginNavbar showLogin={showLogin} setShowLogin={setShowLogin}/>
+          { showLogin ? <LoginForm user={user} setUser={setUser} /> : null }
+          {/* <p>
           Don't have an account? &nbsp;
           <button 
           color="secondary" 
@@ -18,7 +20,7 @@ function Login({user, setUser}) {
           >
             Sign Up
           </button>
-          </p>
+          </p> */}
 
         </div>
     )

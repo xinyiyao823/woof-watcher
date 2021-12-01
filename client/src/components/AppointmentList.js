@@ -5,7 +5,7 @@ function AppointmentList({user, appointment}) {
     console.log(user.appointments)
     return (
         <div>
-            <h3>{user.name}'s Appointments</h3>
+            <h1>{user.name}'s Appointments</h1>
             {user.appointments.map(appointment => <Appointment appointment={appointment} />)}
         </div>
     )

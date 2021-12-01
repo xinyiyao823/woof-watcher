@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AppointmentCalendar from './AppointmentCalendar'
-import 'react-calendar/dist/Calendar.css';
+
 
 
 

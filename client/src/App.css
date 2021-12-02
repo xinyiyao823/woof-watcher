@@ -1,7 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Raleway:wght@500&display=swap');
 
 .App {
   text-align: center;
+  
+  
 }
 
 .App-logo {
@@ -116,4 +118,98 @@
 
 #cancelBtn {
   background-color: crimson;
+}
+
+.paw-print-container {
+  background: rgb(255, 255, 255);
+  height: 800px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.paw-fingers-container {
+  display: flex;
+  justify-content: center;
+}
+
+.paw-fingers-container h1 {
+  padding: 0;
+  margin: 0 0 0 10px;
+}
+
+.paw-print {
+  border-radius: 50%;
+}
+
+.main-paw-print {
+  background: black;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: pink;
+}
+
+.paw-fingers {
+  background: black;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paw-toe-beans {
+  background: pink;
+  width: 80px;
+  height: 80px;
+  border-radius: 50% 50% 20px 20px;
+}
+
+#paw1 {
+  position: relative;
+  top: 70px;
+  right: 10px;
+  transform: rotate(-30deg);
+}
+
+#paw2 {
+  position: relative;
+  bottom: 10px;
+  transform: rotate(-15deg);
+}
+
+#paw3 {
+  position: relative;
+  bottom: 10px;
+  left: 20px;
+  transform: rotate(15deg);
+}
+
+#paw4 {
+  position: relative;
+  top: 85px;
+  left: 20px;
+  transform: rotate(30deg);
+}
+
+.inner-main-paw-print {
+  background: pink;
+  color: white;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.inner-main-paw-print form button{
+  cursor: pointer;
+  text-align: center;
 }

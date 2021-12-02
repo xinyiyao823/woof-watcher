@@ -15,7 +15,7 @@ function Navbar({setUser}) {
     }
     return (
         <Nav>
-            <button onClick={handleLogout}>Logout</button>
+            <Button onClick={handleLogout}>Logout</Button>
         </Nav>
     )
 }
@@ -23,7 +23,13 @@ function Navbar({setUser}) {
 export default Navbar
 
 const Nav = styled.div`
-    background-color: #00968C;
+    background-color: maroon;
 `
-
+const Button = styled.button`
+    margin: 15px;
+    border-radius: 30px;
+    border: none;
+    font-color: white;
+    font-family: 'Fuzzy Bubbles', cursive;
+`
 

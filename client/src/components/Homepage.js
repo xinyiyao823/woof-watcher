@@ -6,11 +6,11 @@ import SitterList from './SitterList'
 import { useNavigate } from 'react-router-dom'
 import {fetchSitters} from '../redux/sittersSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components'
 
 
 function Homepage({user, setUser, appointment, setAppointments}) {
     const dispatch = useDispatch()
-    // const [sitters, showSitters] = useState([])
     const [search, setSearch] = useState("")
     const [sortPrice, setSortPrice] = useState(null);
     const navigate = useNavigate()
@@ -23,9 +23,6 @@ function Homepage({user, setUser, appointment, setAppointments}) {
     }, [])
     const sitters = useSelector(state => state.sitters)
 
-    // const searchedSitters = sitters.filter(sitter => {
-    //     return sitter.name.toLowerCase().includes(search.toLowerCase())
-    // })
 
     const sitterRates = sitters.map(sitter => {
         return sitter.hourly_rate
@@ -48,7 +45,7 @@ function Homepage({user, setUser, appointment, setAppointments}) {
             
             <Navbar user={user} setUser={setUser}/>
             <SearchBar search={search} setSearch={setSearch}/>
-            <button onClick={() => navigate('/appointments')}>View My Appointments</button>
+            <Button onClick={() => navigate('/appointments')}>View My Appointments</Button>
             <DropDown sitterRates={sitterRates} sortPrice={sortPrice} setSortPrice={setSortPrice} />
             <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} user={user} appointment={appointment} setAppointments={setAppointments}/>
 
@@ -60,3 +57,11 @@ function Homepage({user, setUser, appointment, setAppointments}) {
 }
 
 export default Homepage
+
+const Button = styled.button`
+    margin: 15px;
+    border-radius: 30px;
+    border: none;
+    font-color: white;
+    font-family: 'Fuzzy Bubbles', cursive;
+`

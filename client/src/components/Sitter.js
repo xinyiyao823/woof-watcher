@@ -33,5 +33,10 @@ const SitterDiv = styled.div`
     float: left;
 `
 const Button = styled.button`
-margin-bottom: 15px;
+    margin: 15px;
+    border-radius: 30px;
+    border: none;
+    font-color: white;
+    font-family: 'Fuzzy Bubbles', cursive;
+    cursor: pointer;
 `

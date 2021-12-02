@@ -4,11 +4,15 @@ import {useNavigate} from "react-router-dom";
 
 function LoginNavbar({showLogin, setShowLogin}) {
     const navigate = useNavigate()
-    
+
     return (
         <Nav>
-            <button onClick={() => setShowLogin(!showLogin)}>Login</button>
-            <button onClick={() => navigate('/signup')}>Sign Up</button>
+            <Button 
+            onClick={() => setShowLogin(!showLogin)}
+            >Login</Button>
+            <Button 
+            onClick={() => navigate('/signup')}
+            >Sign Up</Button>
         </Nav>
     )
 }
@@ -18,4 +22,13 @@ export default LoginNavbar
 const Nav = styled.div`
     background-color: maroon;
     display: flex;
+`
+
+const Button = styled.button`
+    margin: 15px;
+    border-radius: 30px;
+    border: none;
+    font-color: white;
+    font-family: 'Fuzzy Bubbles', cursive;
+    cursor: pointer;
 `

@@ -11,9 +11,9 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
         setDate(date)
     }
 
-    const handleClick = () => {
-        setModalOpen(false);
-    }
+    // const handleClick = () => {
+    //     setModalOpen(false);
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -63,6 +63,8 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
           </button>
           <button 
           type="submit"
+          onClick={() => {setModalOpen(false);
+            }}
           >Create</button>
         </div>
       </form>

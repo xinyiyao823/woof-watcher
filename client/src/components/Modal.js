@@ -17,7 +17,7 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('hi')
+        // console.log('hi')
         fetch('/appointments', { 
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -29,6 +29,7 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
         })
         .then( r => r.json())
         .then(appointment => setAppointments(appointment))
+        setModalOpen(false)
     }
 
   return (
@@ -63,8 +64,7 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
           <Button 
           type="submit"
           style={{background: 'green'}}
-          onClick={() => {setModalOpen(false);
-            }}
+          onClick={handleSubmit}
           >Create</Button>
         </div>
       </form>

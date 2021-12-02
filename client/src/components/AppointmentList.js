@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Appointment from './Appointment'
 import styled from 'styled-components'
 import { BiArrowBack } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 
 
-function AppointmentList({user, appointment, setAppointments}) {
-
+function AppointmentList({user, setUser, appointment, setAppointments}) {
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+      fetch(`/users/${user.id}`)
+      .then(r => r.json())
+      .then(appointments => setUser(appointments))
+    }, [])
+    console.log(user)
+
     const handleDeleteAppt = (selectedAppt) => {
         fetch(`/appointments/${selectedAppt.id}`, { 
           method: 'DELETE'
@@ -19,7 +26,7 @@ function AppointmentList({user, appointment, setAppointments}) {
         window.location.reload()
       }
 
-    console.log(user.appointments)
+    // console.log(user.appointments)
     return (
         <div>
             <Button onClick={() => navigate('/home')}><BiArrowBack /></Button>

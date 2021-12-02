@@ -138,28 +138,32 @@
 
 .paw-fingers-container h1 {
   padding: 0;
-  margin: 0 0 0 10px;
+  /* margin: 0 0 0 10px; */
 }
 
 .paw-print {
   border-radius: 50%;
 }
 
-.main-paw-print {
+.main-paw-print-paw-print  {
   background: black;
-  width: 450px;
+  margin-top: 5px;
+  width: 530px;
   height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: pink;
+  /* border-radius: 70% 70% 10% 10%; */
+  border-radius: 50%;
+  
 }
 
 .paw-fingers {
   background: black;
   width: 150px;
-  height: 150px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,8 +172,8 @@
 .paw-toe-beans {
   background: pink;
   width: 80px;
-  height: 80px;
-  border-radius: 50% 50% 20px 20px;
+  height: 120px;
+  border-radius: 50%;
 }
 
 #paw1 {
@@ -194,7 +198,7 @@
 
 #paw4 {
   position: relative;
-  top: 85px;
+  top: 75px;
   left: 20px;
   transform: rotate(30deg);
 }
@@ -204,7 +208,7 @@
   color: white;
   width: 80%;
   height: 80%;
-  border-radius: 50%;
+  border-radius: 80%;
   display: flex;
   justify-content: center;
   align-items: center;  

@@ -1,5 +1,7 @@
 import React from 'react'
 import Appointment from './Appointment'
+import styled from 'styled-components'
+
 
 function AppointmentList({user, appointment, setAppointments}) {
 
@@ -16,10 +18,14 @@ function AppointmentList({user, appointment, setAppointments}) {
     console.log(user.appointments)
     return (
         <div>
-            <h1>{user.name}'s Appointments</h1>
+            <Header>{user.name}'s Appointments</Header>
             {user.appointments.map(appointment => <Appointment appointment={appointment} handleDeleteAppt={handleDeleteAppt} />)}
         </div>
     )
 }
 
 export default AppointmentList
+
+const Header = styled.h1`
+  font-family: 'Fuzzy Bubbles', cursive;
+`

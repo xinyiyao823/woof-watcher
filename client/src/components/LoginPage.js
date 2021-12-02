@@ -33,7 +33,7 @@ function Login({user, setUser}) {
                 {/* <Header>WOOF WATCHER</Header> */}
             </div>
           
-            <div className="main-paw-print paw-print">
+            <div className="main-paw-print-paw-print">
                 <div className="inner-main-paw-print">
                     { showLogin ? <LoginForm user={user} setUser={setUser} /> : null }
                 </div>

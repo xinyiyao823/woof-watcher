@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
-function Navbar({setUser}) {
+function Navbar({user, setUser}) {
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -15,6 +15,7 @@ function Navbar({setUser}) {
     }
     return (
         <Nav>
+            {/* <span>Welcome, {user.name}</span> */}
             <Button onClick={handleLogout}>Logout</Button>
         </Nav>
     )

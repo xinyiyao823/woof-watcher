@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {useNavigate} from "react-router-dom";
 
+
 function LoginNavbar({showLogin, setShowLogin}) {
     const navigate = useNavigate()
 
@@ -9,7 +10,7 @@ function LoginNavbar({showLogin, setShowLogin}) {
         <Nav>
             <Button 
             onClick={() => setShowLogin(!showLogin)}
-            >Login</Button>
+            >Login </Button>
             <Button 
             onClick={() => navigate('/signup')}
             >Sign Up</Button>

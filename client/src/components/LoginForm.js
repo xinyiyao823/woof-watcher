@@ -79,10 +79,12 @@ const Button = styled.button`
     border-radius: 30px;
     border: none;
     font-color: white;
+    font-size: 15px;
+    padding: 10px;
     font-family: 'Fuzzy Bubbles', cursive;
 `
 const Input = styled.input`
-  margin: 15px;
+  margin: 10px;
   padding: 10px;
   border-radius: 30px;
   border: none;

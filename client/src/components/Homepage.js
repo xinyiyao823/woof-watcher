@@ -61,7 +61,12 @@ export default Homepage
 const Button = styled.button`
     margin: 15px;
     border-radius: 30px;
+    padding: 10px;
     border: none;
     font-color: white;
+    font-size: 15px;
     font-family: 'Fuzzy Bubbles', cursive;
+    cursor: pointer;
 `
+
+

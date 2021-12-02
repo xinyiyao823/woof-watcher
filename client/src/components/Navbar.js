@@ -29,7 +29,10 @@ const Button = styled.button`
     margin: 15px;
     border-radius: 30px;
     border: none;
+    padding: 10px;
     font-color: white;
+    font-size: 15px;
     font-family: 'Fuzzy Bubbles', cursive;
+    cursor: pointer;
 `
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AppointmentCalendar from './AppointmentCalendar'
-
+import styled from 'styled-components';
 
 
 
@@ -44,9 +44,7 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
             X
           </button>
         </div>
-        <div className="title">
-          
-        </div>
+
         <div className="body">
           <AppointmentCalendar
           date={date}
@@ -54,18 +52,20 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
           onChange={onChange} />
         </div>
         <div className="footer">
-          <button
+          <Button
             onClick={() => {setModalOpen(false);
             }}
+            style={{background: 'red'}}
             id="cancelBtn"
           >
             Cancel
-          </button>
-          <button 
+          </Button>
+          <Button 
           type="submit"
+          style={{background: 'green'}}
           onClick={() => {setModalOpen(false);
             }}
-          >Create</button>
+          >Create</Button>
         </div>
       </form>
     </div>
@@ -73,3 +73,14 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
 }
 
 export default Modal;
+
+const Button = styled.button`
+    
+    padding: 1px;
+    border-radius: 30px;
+    border: none;
+    font-color: white;
+    font-family: 'Fuzzy Bubbles', cursive;
+    cursor: pointer;
+    text-align: center
+`

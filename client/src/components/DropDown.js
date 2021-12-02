@@ -1,30 +1,3 @@
-// import React, { useState } from 'react'
-// import { Dropdown } from 'semantic-ui-react'
-
-// const options = [
-//   { key: 'price', text: 'Price', value: 'price' },
-//   { key: 'location', text: 'Location', value: 'location' }
-// ]
-
-
-// const DropDown = () => {
-//     const [value, setValue] = useState("")
-
-
-
-//     return (
-//         <Dropdown
-//         placeholder='Filter' 
-//         fluid multiple 
-//         selection 
-//         options={options}
-//         value={value} 
-//         onChange={(e) => setValue(e.target.value)}
-//         />
-//     );
-// }
-
-// export default DropDown
 
 import * as React from 'react';
 // import { useState } from 'react';
@@ -33,6 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import styled from 'styled-components'
 
 
 export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
@@ -46,8 +20,8 @@ export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
   // console.log(lowToHigh)
 
   return (
-    <Box className="dropdown" sx={{ minWidth: 50 }}>
-     <label>
+    <Box className="dropdown" sx={{ minWidth: 40 }}>
+     <Label>
       <strong>Sort By:</strong>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Price</InputLabel>
@@ -62,9 +36,12 @@ export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
             <MenuItem value="High">$ High to Low</MenuItem>
           </Select>
         </FormControl>
-      </label>
+      </Label>
     </Box>
   );
 }
 
+const Label = styled.label`
+  font-family: 'Fuzzy Bubbles', cursive;
+`
 

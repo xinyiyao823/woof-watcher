@@ -13,8 +13,8 @@ function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setA
 
     return (
         <SitterDiv>
-            <h2>{name}</h2>
-            <h3>Hourly Rate: ${hourly_rate}</h3>
+            <h2><strong>{name}</strong></h2>
+            <h3>Rate: ${hourly_rate}/hr</h3>
             <h3>Location: {location}</h3>
             <Button onClick={handleClick}>Book Appointment <IoPaw /></Button>
             {modalOpen && <Modal sitter_id={sitter_id} modalOpen={modalOpen} setModalOpen={setModalOpen} user={user} appointment={appointment} setAppointments={setAppointments}/>}
@@ -31,11 +31,15 @@ const SitterDiv = styled.div`
     padding: 10px;
     display: inline-block;
     float: left;
+    font-family: 'Fuzzy Bubbles', cursive;
+    
 `
 const Button = styled.button`
     margin: 15px;
+    padding: 10px;
     border-radius: 30px;
     border: none;
+    font-size: 15px;
     font-color: white;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;

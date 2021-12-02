@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Raleway:wght@500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
 .App {
   text-align: center;
-  
+  background-color: aliceblue;
   
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -26,9 +28,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
 }
 
@@ -39,10 +41,11 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .dropdown {
-  width: 10%;
+  width: 7%;
+  height: 5%;
   margin-left: 50px;
 }
 
@@ -94,7 +97,7 @@
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
-  margin: 20px;
+  margin: 15px;
 }
 
 .modalContainer .footer {
@@ -116,12 +119,10 @@
   cursor: pointer;
 }
 
-#cancelBtn {
-  background-color: crimson;
-}
+
 
 .paw-print-container {
-  background: rgb(255, 255, 255);
+  background: aliceblue;
   height: 800px;
   width: 800px;
   display: flex;

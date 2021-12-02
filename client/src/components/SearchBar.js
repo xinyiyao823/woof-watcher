@@ -5,8 +5,8 @@ import styled from 'styled-components'
 function SearchBar({search, setSearch}) {
     return (
         <div className="searchbar">
-            <label htmlFor="search">Search Dog-Sitters: </label>
-            <input
+            <Label htmlFor="search">Search Dog-Sitters:</Label>
+            <Input
                 type="text"
                 id="search"
                 placeholder="Type a name to search..."
@@ -21,10 +21,21 @@ function SearchBar({search, setSearch}) {
 export default SearchBar
 
 const Button = styled.button`
-    margin: 15px;
+    margin: 12px;
+    padding: 8px;
     border-radius: 30px;
     border: none;
     font-color: white;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
+`
+
+const Input = styled.input`
+  margin: 5px;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+`
+const Label = styled.label`
+  font-family: 'Fuzzy Bubbles', cursive;
 `

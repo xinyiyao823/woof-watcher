@@ -15,7 +15,7 @@ function Navbar({user, setUser}) {
     }
     return (
         <Nav>
-            {/* <span>Welcome, {user.name}</span> */}
+            <span>Welcome, {user.name}</span>
             <Button onClick={handleLogout}>Logout</Button>
         </Nav>
     )

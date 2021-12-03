@@ -5,7 +5,7 @@ import { BiArrowBack } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 
 
-function AppointmentList({user, setUser, appointment, setAppointments}) {
+function AppointmentList({user, setUser}) {
 
     const navigate = useNavigate()
 
@@ -21,12 +21,15 @@ function AppointmentList({user, setUser, appointment, setAppointments}) {
           method: 'DELETE'
         })
      
-        let remainingAppointments = (appointment) => appointment.filter(appt => appt.id !== selectedAppt.id)
-        setAppointments(remainingAppointments)
-        window.location.reload()
-      }
+       setUser(user => {
+         return ({
+          ...user, 
+          appointments: user.appointments.filter(appt => appt.id !== selectedAppt.id)
+         })
+       })
+    }
 
-    // console.log(user.appointments)
+
     return (
         <div>
             <Button onClick={() => navigate('/home')}><BiArrowBack /></Button>

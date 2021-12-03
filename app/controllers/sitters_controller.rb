@@ -1,4 +1,6 @@
 class SittersController < ApplicationController
+    skip_before_action :authorize, only: [:index,:show,:create,:update,:destroy]
+
     def index  
         sitters = Sitter.all
         render json: sitters, status: :ok

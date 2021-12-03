@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-    
+    skip_before_action :authorize, only: [:index,:show,:create,:update,:destroy]
 
     def index 
         appointments = Appointment.all
@@ -18,7 +18,7 @@ class AppointmentsController < ApplicationController
     def destroy 
         appointment = Appointment.find(params[:id])
         appointment.destroy
-        head :no_content
+        # head :no_content
     end
 
     private 

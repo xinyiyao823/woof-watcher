@@ -79,7 +79,7 @@ const Button = styled.button`
     border-radius: 30px;
     border: none;
     font-color: white;
-    font-size: 15px;
+    font-size: 18px;
     padding: 10px;
     font-family: 'Fuzzy Bubbles', cursive;
 `
@@ -91,4 +91,5 @@ const Input = styled.input`
 `
 const Label = styled.label`
   font-family: 'Fuzzy Bubbles', cursive;
+  font-size: 23px;
 `

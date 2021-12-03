@@ -13,9 +13,11 @@ function Navbar({user, setUser}) {
         navigate('/')
 
     }
+
+    console.log(user)
     return (
         <Nav>
-            <span>Welcome, {user.name}</span>
+            {/* <span>Welcome, {user.name}</span> */}
             <Button onClick={handleLogout}>Logout</Button>
         </Nav>
     )

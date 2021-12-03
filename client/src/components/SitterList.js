@@ -15,4 +15,5 @@ export default SitterList
 const SitterListDiv = styled.div`
     display: flex;
     background-color: aliceblue;
+    
 `

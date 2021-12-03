@@ -15,35 +15,37 @@
 }
 
 .modalBackground {
-  width: 10vw;
-  height: 10vh;
+  width: 25vw;
+  height: 9vh;
   background-color: rgba(200, 200, 200);
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .modalContainer {
   width: 400px;
-  height: 400px;
+  height: 350px;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 15px;
+  margin-top: none;
 }
 
 .modalContainer .title {
   display: inline-block;
   text-align: center;
-  margin-top: 10px;
 }
 
 .titleCloseBtn {
   display: flex;
   justify-content: flex-end;
+  margin-top: none;
 }
 
 .titleCloseBtn button {
@@ -51,6 +53,7 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
+  font-family: 'Fuzzy Bubbles', cursive;
 }
 
 .modalContainer .body {
@@ -65,7 +68,7 @@
 }
 
 .modalContainer .footer {
-  flex: 20%;
+  flex: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +78,7 @@
   width: 60px;
   height: 25px;
   margin: 10px;
+  margin-top: 50px;
   border: none;
   background-color: cornflowerblue;
   color: white;
@@ -160,28 +164,28 @@
 #paw1 {
   position: relative;
   top: 150px;
-  right: 40px;
+  right: 45px;
   transform: rotate(-30deg);
 }
 
 #paw2 {
   position: relative;
   bottom: 10px;
-  right: 15px;
+  right: 20px;
   transform: rotate(-15deg);
 }
 
 #paw3 {
   position: relative;
   bottom: 10px;
-  left: 50px;
+  left: 45px;
   transform: rotate(16deg);
 }
 
 #paw4 {
   position: relative;
   top: 170px;
-  left: 65px;
+  left: 60px;
   transform: rotate(30deg);
 }
 

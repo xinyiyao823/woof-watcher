@@ -25,7 +25,8 @@ function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setA
 export default Sitter
 
 const SitterDiv = styled.div`
-    border: 2px solid;
+    border: 3px solid maroon;
+    border-radius: 10%;
     width: 15%;
     margin: 25px;
     padding: 10px;

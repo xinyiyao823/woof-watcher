@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
 import AppointmentCalendar from './AppointmentCalendar'
 import styled from 'styled-components';
-
+import setHours from "date-fns/setHours";
+import setMinutes from "date-fns/setMinutes";
 
 
 function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppointments}) {
-    const [date, setDate] = useState(new Date())
+  
+    const [date, setDate] = useState((new Date()))
 
     const onChange = (date) => {
         setDate(date)
     }
 
-    // const handleClick = () => {
-    //     setModalOpen(false);
-    // }
+    const handleClick = () => {
+        setModalOpen(false);
+    }
+
+    const [startDate, setStartDate] = useState(
+      setHours(setMinutes(new Date(), 0), 9)
+    );
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -24,7 +30,7 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
             body: JSON.stringify({
                 user_id: user.id,
                 sitter_id: sitter_id,
-                date: date
+                date: startDate
             })
         })
         .then( r => r.json())
@@ -47,10 +53,14 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
         </div>
 
         <div className="body">
+          <P>Please choose a time and date.</P>
           <AppointmentCalendar
-          date={date}
-          setDate={setDate}
-          onChange={onChange} />
+          // date={date}
+          // setDate={setDate}
+          // onChange={onChange} 
+          startDate={startDate}
+          setStartDate={setStartDate}
+          />
         </div>
         <div className="footer">
           <Button
@@ -75,7 +85,6 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
 export default Modal;
 
 const Button = styled.button`
-    
     padding: 1px;
     border-radius: 30px;
     border: none;
@@ -83,4 +92,8 @@ const Button = styled.button`
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     text-align: center
+`
+
+const P = styled.p`
+font-size: 15px;
 `

@@ -30,8 +30,8 @@ const Button = styled.button`
     border-radius: 30px;
     border: none;
     font-color: white;
-    padding: 10px;
+    padding: 8px;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 17px;
 `

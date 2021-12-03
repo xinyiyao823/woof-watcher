@@ -40,44 +40,44 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
 
   return (
     <div className="modalBackground">
-      <form 
-      className="modalContainer"
-      onSubmit={handleSubmit}
-      >
-        <div className="titleCloseBtn">
-          <button
-            onClick={() => {setModalOpen(false)}}
-          >
-            X
-          </button>
+      <div>
+        <div
+        className="modalContainer"
+        onSubmit={handleSubmit}
+        >
+          <div className="titleCloseBtn">
+            <button onClick={() => {setModalOpen(false)}}>X</button>
+          </div>
+          <div className="container">
+            <div className="title">
+              <P>Please choose a time and date.</P>
+            </div>
+            <div className="body">
+              <AppointmentCalendar
+              startDate={startDate}
+              setStartDate={setStartDate}
+              />
+            </div>
+          </div>
+          <div className="modal-buttons">
+            <div className="cancel">
+              <Button
+                onClick={() => {setModalOpen(false);
+                }}
+                style={{background: 'red'}}
+                id="cancelBtn"
+              >Cancel</Button>
+              </div>
+              <div className="create">
+              <Button 
+              type="submit"
+              style={{background: 'green'}}
+              onClick={handleSubmit}
+              >Create</Button>
+            </div>
+          </div>
         </div>
-
-        <div className="body">
-          <P>Please choose a time and date.</P>
-          <AppointmentCalendar
-          // date={date}
-          // setDate={setDate}
-          // onChange={onChange} 
-          startDate={startDate}
-          setStartDate={setStartDate}
-          />
-        </div>
-        <div className="footer">
-          <Button
-            onClick={() => {setModalOpen(false);
-            }}
-            style={{background: 'red'}}
-            id="cancelBtn"
-          >
-            Cancel
-          </Button>
-          <Button 
-          type="submit"
-          style={{background: 'green'}}
-          onClick={handleSubmit}
-          >Create</Button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
@@ -85,10 +85,9 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
 export default Modal;
 
 const Button = styled.button`
-    padding: 1px;
+    padding: 5px;
     border-radius: 30px;
     border: none;
-    font-color: white;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     text-align: center

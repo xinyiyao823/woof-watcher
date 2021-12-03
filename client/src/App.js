@@ -12,15 +12,6 @@ import AppointmentList from './components/AppointmentList'
 const App = () => {
   const [user, setUser] = useState(null)
   const [appointment, setAppointments] = useState([])
- 
-  // const handleDeleteAppt = (selectedAppt) => {
-  //   fetch(`/appointments/${selectedAppt.id}`, { 
-  //     method: 'DELETE'
-  //   })
- 
-  //   let remainingAppointments = (appointment) => appointment.filter(appt => appt.id !== selectedAppt.id)
-  //   setAppointments(remainingAppointments)
-  // }
 
   return (
     <Router>

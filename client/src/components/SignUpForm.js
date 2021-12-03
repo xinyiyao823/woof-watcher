@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 
 function SignUpForm({user, setUser}) {
 
@@ -41,49 +42,70 @@ function SignUpForm({user, setUser}) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        
-          <label htmlFor="name">Full Name</label>
-          <input
+        <Label htmlFor="name">Full Name:</Label>
+        <Input
             type="text"
             id="name"
             autoComplete="off"
             value={name}
             onChange={(e) => setName(e.target.value)}
           /><br/>
-          <label htmlFor="name">Age</label>
-          <input
+        <Label htmlFor="name">Age:</Label>
+        <Input
             type="text"
             id="age"
             autoComplete="off"
             value={age}
             onChange={(e) => setAge(e.target.value)}
-          /><br/>
-          <label htmlFor="email">Email</label>
-          <input
+        /><br/>
+        <Label htmlFor="email">Email:</Label>
+        <Input
             type="text"
             id="email"
             autoComplete="off"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          /><br/>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete="current-password"
-          /><br/>
-          <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
-
+        /><br/>
+        <Label htmlFor="password">Password:</Label>
+        <Input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          autoComplete="current-password"
+        /><br/>
+        <Button 
+        type="submit"
+        
+        >{isLoading ? "Loading..." : "Sign Up"}
+        </Button>
           {errors.map((err) => (
             <p style={{color: "red"}} key={err}>{err}</p>
           ))}
-
       </form>
-      <button onClick={() => navigate("/")}>Cancel</button>
+      <Button onClick={() => navigate("/")}>Cancel</Button>
     </div>
   );
 }
 
 export default SignUpForm
+
+const Button = styled.button`
+    margin: 15px;
+    border-radius: 30px;
+    border: none;
+    font-color: white;
+    font-size: 18px;
+    padding: 10px;
+    font-family: 'Fuzzy Bubbles', cursive;
+`
+const Input = styled.input`
+  margin: 10px;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+`
+const Label = styled.label`
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-size: 23px;
+`

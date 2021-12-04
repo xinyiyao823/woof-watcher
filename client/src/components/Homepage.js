@@ -13,8 +13,7 @@ function Homepage({user, setUser, appointment, setAppointments, startDate, setSt
     const dispatch = useDispatch()
     const [search, setSearch] = useState("")
     const [sortPrice, setSortPrice] = useState(null);
-    const navigate = useNavigate()
-    console.log(startDate)
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(fetchSitters('/sitters'))

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import DeleteConfirmation from "./DeleteConfirmation"
 
 
 function SignUpForm({user, setUser}) {
@@ -87,7 +88,7 @@ function SignUpForm({user, setUser}) {
       </form>
       <Button onClick={() => navigate("/")}>Cancel</Button>
     </div>
-
+            {/* <DeleteConfirmation /> */}
     </>
   );
 }

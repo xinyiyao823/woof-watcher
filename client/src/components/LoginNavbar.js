@@ -8,12 +8,14 @@ function LoginNavbar({showLogin, setShowLogin}) {
 
     return (
         <Nav>
-            <Button 
-            onClick={() => setShowLogin(!showLogin)}
-            >Login </Button>
-            <Button 
-            onClick={() => navigate('/signup')}
-            >Sign Up</Button>
+            <div>
+                <Button onClick={() => setShowLogin(!showLogin)}>Login</Button>
+            </div>
+            <div>
+                <Button 
+                onClick={() => navigate('/signup')}
+                >Sign Up</Button>
+            </div>
         </Nav>
     )
 }

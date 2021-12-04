@@ -19,8 +19,10 @@ function Navbar({user, setUser}) {
     return (
         <Nav>
             <div>
-                <GiDogHouse size={50}/>
-                {/* <span>Welcome, {user.name}</span> */}
+                <Div>
+                    <GiDogHouse size={40}/>
+                </Div>
+                <Span>{user.name.toUpperCase()}</Span>
             </div>
             <div className="logout">
                 <Button onClick={handleLogout}>Logout</Button>
@@ -34,11 +36,9 @@ export default Navbar
 const Nav = styled.div`
     background-color: maroon;
     display: flex;
-
-
+    justify-content: space-between;
 `
 const Button = styled.button`
-
     margin: 15px;
     border-radius: 30px;
     border: none;
@@ -47,7 +47,16 @@ const Button = styled.button`
     font-size: 15px;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
- 
+`
+
+const Span = styled.span`
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 20px;
+    margin-left: 15px;
+`
+
+const Div = styled.div`
+    margin-left: 15px;
 `
 // move logout button to the right 
 // get "welcome, user.name to show in the nav"

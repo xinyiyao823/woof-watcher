@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import Modal from './Modal';
+import SitterRating from './SitterRating';
 // import { IoPaw } from 'react-icons/io5';
+
 
 
 function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setAppointments, startDate, setStartDate,}) {
@@ -18,6 +20,7 @@ function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setA
             <h3>Rate: ${hourly_rate}/hr</h3>
             <h3>Location: {location}</h3>
             <Button onClick={handleClick}>Book Appointment <strong>🐾</strong></Button>
+            <SitterRating />
             {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}
         </SitterDiv>
     )

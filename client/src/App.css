@@ -14,8 +14,13 @@
   margin-left: 50px;
 }
 
+.logout {
+  display: flex;
+  justify-content: right;
+}
+
 .modalBackground {
-  width: 20vw;
+  width: 15vw;
   height: 9vh;
   background-color: rgba(200, 200, 200);
   position: fixed;

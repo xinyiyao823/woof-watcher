@@ -11,7 +11,7 @@ function Appointment({ appointment, handleDeleteAppt}) {
         <ApptDiv>
             <h3>Date: {appointment.date}</h3>
             <h3>Dog-Sitter: {appointment.sitter.name}</h3>
-            
+            <Button>Edit</Button>
             <Button onClick={handleClick}>Cancel</Button>
         </ApptDiv>
     )

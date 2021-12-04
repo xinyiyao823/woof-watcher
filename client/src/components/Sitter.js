@@ -4,8 +4,9 @@ import Modal from './Modal';
 // import { IoPaw } from 'react-icons/io5';
 
 
-function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setAppointments}) {
+function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setAppointments, startDate, setStartDate,}) {
     const [modal, setModal] = useState(false);
+    
 
     const handleClick = () => {
         setModal(true)
@@ -17,7 +18,7 @@ function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setA
             <h3>Rate: ${hourly_rate}/hr</h3>
             <h3>Location: {location}</h3>
             <Button onClick={handleClick}>Book Appointment <strong>🐾</strong></Button>
-            {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} appointment={appointment} setAppointments={setAppointments}/>}
+            {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}
         </SitterDiv>
     )
 }

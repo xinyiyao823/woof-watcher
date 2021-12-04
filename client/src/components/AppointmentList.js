@@ -5,8 +5,8 @@ import { BiArrowBack } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 
 
-function AppointmentList({user, setUser}) {
-
+function AppointmentList({user, setUser, startDate, setStartDate}) {
+  // console.log(startDate)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -14,8 +14,8 @@ function AppointmentList({user, setUser}) {
       .then(r => r.json())
       .then(appointments => setUser(appointments))
     }, [])
-    console.log(user)
 
+    // console.log(startDate)
     const handleDeleteAppt = (selectedAppt) => {
         fetch(`/appointments/${selectedAppt.id}`, { 
           method: 'DELETE'
@@ -29,12 +29,11 @@ function AppointmentList({user, setUser}) {
        })
     }
 
-// fkgjdoikfsekweksljferkje
     return (
         <div>
             <Button onClick={() => navigate('/home')}><BiArrowBack /></Button>
             <Header>{user.name}'s Appointments</Header>
-            {user.appointments.map(appointment => <Appointment appointment={appointment} handleDeleteAppt={handleDeleteAppt} />)}
+            {user.appointments.map(appointment => <Appointment appointment={appointment} handleDeleteAppt={handleDeleteAppt} startDate={startDate} setStartDate={setStartDate}/>)}
         </div>
     )
 }

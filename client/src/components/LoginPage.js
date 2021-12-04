@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import LoginForm from './LoginForm'
 import LoginNavbar from './LoginNavbar'
 import styled from 'styled-components';
-import { IoPaw } from 'react-icons/io5';
+// import { IoPaw } from 'react-icons/io5';
 
 
 

@@ -28,7 +28,7 @@ export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
           <Select
             // labelId="demo-simple-select-label"
             // id="demo-simple-select"
-            value="high"
+            value='High'
             label="price"
             onChange={handleSortChange}
           >

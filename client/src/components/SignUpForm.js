@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import ApptModal from './ApptModal'
+
 
 function SignUpForm({user, setUser}) {
 
@@ -28,12 +28,12 @@ function SignUpForm({user, setUser}) {
         age,  
         email,
         password,
-
       }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => setUser(user));
+        navigate('/')
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -87,7 +87,7 @@ function SignUpForm({user, setUser}) {
       </form>
       <Button onClick={() => navigate("/")}>Cancel</Button>
     </div>
-    <ApptModal />
+
     </>
   );
 }

@@ -7,11 +7,9 @@ function LoginForm({user, setUser}) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState("")
-    const [isLoading, setIsLoading] = useState(false);
-    // const [user, setUser] = useState(null)
-    
+    const [isLoading, setIsLoading] = useState(false);    
     const navigate = useNavigate();
-    // console.log(errors)
+
     function handleSubmit(e) {
       e.preventDefault();
       setIsLoading(true);
@@ -24,10 +22,7 @@ function LoginForm({user, setUser}) {
         }).then((r) => {
         setIsLoading(false);
         if (r.ok) {
-          r.json().then((user) =>  {
-            console.log(user)
-            setUser(user)
-          });
+          r.json().then((user) =>  setUser(user));
           navigate("/home")
         } else {
           r.json().then((error) => setErrors(error));

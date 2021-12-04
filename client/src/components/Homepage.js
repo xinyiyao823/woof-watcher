@@ -9,11 +9,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 
-function Homepage({user, setUser, appointment, setAppointments}) {
+function Homepage({user, setUser, appointment, setAppointments, startDate, setStartDate}) {
     const dispatch = useDispatch()
     const [search, setSearch] = useState("")
     const [sortPrice, setSortPrice] = useState(null);
     const navigate = useNavigate()
+    console.log(startDate)
 
     useEffect(() => {
         dispatch(fetchSitters('/sitters'))
@@ -21,9 +22,8 @@ function Homepage({user, setUser, appointment, setAppointments}) {
         // .then(r => r.json())
         // .then(data => showSitters(data))
     }, [])
+
     const sitters = useSelector(state => state.sitters)
-
-
     const sitterRates = sitters.map(sitter => {
         return sitter.hourly_rate
     })
@@ -39,14 +39,14 @@ function Homepage({user, setUser, appointment, setAppointments}) {
     const searchedSitters = sortedSitters.filter(sitter => {
         return sitter.name.toLowerCase().includes(search.toLowerCase())
     })
-
+    console.log(user)
     return (
         <div>
             <Navbar user={user} setUser={setUser}/>
             <SearchBar search={search} setSearch={setSearch}/>
             <Button onClick={() => navigate('/appointments')}>View My Appointments</Button>
             <DropDown sitterRates={sitterRates} sortPrice={sortPrice} setSortPrice={setSortPrice} />
-            <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} user={user} appointment={appointment} setAppointments={setAppointments}/>    
+            <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} user={user} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>    
         </div>
     )
 }

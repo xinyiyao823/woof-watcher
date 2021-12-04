@@ -1,22 +1,12 @@
 import React, { useState } from 'react'
 import AppointmentCalendar from './AppointmentCalendar'
 import styled from 'styled-components';
-import setHours from "date-fns/setHours";
-import setMinutes from "date-fns/setMinutes";
+
+import { parseISO } from 'date-fns'
+import Moment from 'moment';
 
 
-function Modal({ sitter_id, modal, setModal, user, appointment, setAppointments}) {
-  
-    const [date, setDate] = useState((new Date()))
-    const onChange = (date) => {
-        setDate(date)
-    }
-    // const handleClick = () => {
-    //     setModalOpen(false);
-    // }
-    const [startDate, setStartDate] = useState(
-      setHours(setMinutes(new Date(), 0), 9)
-    );
+function Modal({ sitter_id, modal, setModal, user, setAppointments, startDate, setStartDate,}) {
   
   
     const toggleModal = () => {

@@ -5,10 +5,10 @@ import Modal from './Modal';
 
 
 function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setAppointments}) {
-    const [modalOpen, setModalOpen] = useState(false)
+    const [modal, setModal] = useState(false);
 
     const handleClick = () => {
-        setModalOpen(true)
+        setModal(true)
     }
 
     return (
@@ -17,7 +17,7 @@ function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setA
             <h3>Rate: ${hourly_rate}/hr</h3>
             <h3>Location: {location}</h3>
             <Button onClick={handleClick}>Book Appointment <strong>🐾</strong></Button>
-            {modalOpen && <Modal sitter_id={sitter_id} modalOpen={modalOpen} setModalOpen={setModalOpen} user={user} appointment={appointment} setAppointments={setAppointments}/>}
+            {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} appointment={appointment} setAppointments={setAppointments}/>}
         </SitterDiv>
     )
 }

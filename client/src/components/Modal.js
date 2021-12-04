@@ -5,48 +5,58 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 
 
-function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppointments}) {
+function Modal({ sitter_id, modal, setModal, user, appointment, setAppointments}) {
   
     const [date, setDate] = useState((new Date()))
-
     const onChange = (date) => {
         setDate(date)
     }
-
-    const handleClick = () => {
-        setModalOpen(false);
-    }
-
+    // const handleClick = () => {
+    //     setModalOpen(false);
+    // }
     const [startDate, setStartDate] = useState(
       setHours(setMinutes(new Date(), 0), 9)
     );
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // console.log('hi')
-        fetch('/appointments', { 
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                user_id: user.id,
-                sitter_id: sitter_id,
-                date: startDate
-            })
-        })
-        .then( r => r.json())
-        .then(appointment => setAppointments(appointment))
-        setModalOpen(false)
+  
+  
+    const toggleModal = () => {
+      setModal(!modal);
+    };
+  
+    if(modal) {
+      document.body.classList.add('active-modal')
+    } else {
+      document.body.classList.remove('active-modal')
     }
 
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      // console.log('hi')
+      fetch('/appointments', { 
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+              user_id: user.id,
+              sitter_id: sitter_id,
+              date: startDate
+          })
+      })
+      .then( r => r.json())
+      .then(appointment => setAppointments(appointment))
+      setModal(false)
+  }
+
   return (
-    <div className="modalBackground">
+    <div className="modalBackground" >
       <div>
+      <div onClick={toggleModal} className="overlay"></div>
         <div
-        className="modalContainer"
+        className="modal-content"
         onSubmit={handleSubmit}
+        
         >
           <div className="titleCloseBtn">
-            <button onClick={() => {setModalOpen(false)}}>X</button>
+            <button onClick={() => {setModal(false)}}>X</button>
           </div>
           <div className="container">
             <div className="title">
@@ -62,7 +72,7 @@ function Modal({ sitter_id, modalOpen, setModalOpen, user, appointment, setAppoi
           <div className="modal-buttons">
             <div className="cancel">
               <Button
-                onClick={() => {setModalOpen(false);
+                onClick={() => {setModal(false);
                 }}
                 style={{background: 'red'}}
                 id="cancelBtn"

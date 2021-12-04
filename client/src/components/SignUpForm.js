@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import ApptModal from './ApptModal'
 
 function SignUpForm({user, setUser}) {
 
@@ -40,6 +41,7 @@ function SignUpForm({user, setUser}) {
   }
 
   return (
+    <>
     <div>
       <form onSubmit={handleSubmit}>
         <Label htmlFor="name">Full Name:</Label>
@@ -85,6 +87,8 @@ function SignUpForm({user, setUser}) {
       </form>
       <Button onClick={() => navigate("/")}>Cancel</Button>
     </div>
+    <ApptModal />
+    </>
   );
 }
 

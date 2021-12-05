@@ -6,7 +6,7 @@ import SitterRating from './SitterRating';
 
 
 
-function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setAppointments, startDate, setStartDate,}) {
+function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointment, setAppointments, startDate, setStartDate,}) {
     const [modal, setModal] = useState(false);
     
 
@@ -21,7 +21,7 @@ function Sitter({sitter_id, name, hourly_rate, location, user, appointment, setA
             <h3>Location: {location}</h3>
             <Button onClick={handleClick}>Book Appointment <strong>🐾</strong></Button>
             <SitterRating />
-            {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}
+            {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}
         </SitterDiv>
     )
 }

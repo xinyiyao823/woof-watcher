@@ -6,7 +6,7 @@ import { parseISO } from 'date-fns'
 import Moment from 'moment';
 
 
-function Modal({ sitter_id, modal, setModal, user, setAppointments, startDate, setStartDate,}) {
+function Modal({ sitter_id, modal, setModal, user, setUser, setAppointments, startDate, setStartDate,}) {
   
   
     const toggleModal = () => {
@@ -21,7 +21,7 @@ function Modal({ sitter_id, modal, setModal, user, setAppointments, startDate, s
 
     const handleSubmit = (e) => {
       e.preventDefault()
-      // console.log('hi')
+     console.log(startDate)
       fetch('/appointments', { 
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -31,8 +31,13 @@ function Modal({ sitter_id, modal, setModal, user, setAppointments, startDate, s
               date: startDate
           })
       })
-      .then( r => r.json())
-      .then(appointment => setAppointments(appointment))
+      .then(r => r.json())
+      .then(appointment => setUser(user => {
+          return ({
+          ...user, 
+          appointments: [...user.appointments, appointment]
+          })
+      }))
       setModal(false)
   }
 

@@ -45,7 +45,7 @@ function Homepage({user, setUser, appointment, setAppointments, startDate, setSt
             <SearchBar search={search} setSearch={setSearch}/>
             <Button onClick={() => navigate('/appointments')}>View My Appointments</Button>
             <DropDown sitterRates={sitterRates} sortPrice={sortPrice} setSortPrice={setSortPrice} />
-            <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} user={user} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>    
+            <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>    
         </div>
     )
 }

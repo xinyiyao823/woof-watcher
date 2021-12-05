@@ -22,7 +22,10 @@ function LoginForm({user, setUser}) {
         }).then((r) => {
         setIsLoading(false);
         if (r.ok) {
-          r.json().then((user) =>  setUser(user));
+          r.json().then((user) =>  {
+            console.log(user)
+            setUser(user)
+          });
           navigate("/home")
         } else {
           r.json().then((error) => setErrors(error));

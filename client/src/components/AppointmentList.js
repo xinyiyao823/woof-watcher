@@ -15,7 +15,6 @@ function AppointmentList({user, setUser, startDate, setStartDate}) {
       .then(appointments => setUser(appointments))
     }, [])
 
-    // console.log(startDate)
     const handleDeleteAppt = (selectedAppt) => {
         fetch(`/appointments/${selectedAppt.id}`, { 
           method: 'DELETE'
@@ -28,6 +27,8 @@ function AppointmentList({user, setUser, startDate, setStartDate}) {
          })
        })
     }
+    console.log(user)
+    // console.log(appointment)
 
     return (
         <div>

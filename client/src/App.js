@@ -12,18 +12,23 @@ import { parseISO } from 'date-fns'
 
 const App = () => {
   const [user, setUser] = useState(null)
-  const [appointment, setAppointments] = useState([])
+  // const [appointment, setAppointments] = useState([])
   const [startDate, setStartDate] = useState(
-    (setHours(setMinutes(new Date(), 0), 9)).toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})
+    (setHours(setMinutes(new Date(), 0), 9))
+    //.toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})
   );
   
     useEffect(() => {
       fetch('/me')
       .then(r => r.json())
-      .then(user => setUser(user))
+      .then(user => 
+        {
+          setUser(user)
+          console.log(user)
+        })
     }, [])
 
-    console.log(startDate)
+    
   
   return (
     <Router>
@@ -31,8 +36,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LoginPage user={user} setUser={setUser} />}/>
           <Route path="/signup" element={<SignUpForm user={user} setUser={setUser}/>}/>
-          { user && <Route path="/home" element={<Homepage user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}/>}
-          {user && <Route path="/appointments" element={<AppointmentList user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}/>}
+          {user && <Route path="/home" element={<Homepage user={user} setUser={setUser}  startDate={startDate} setStartDate={setStartDate}/>}/>}
+          {user && <Route path="/appointments" element={<AppointmentList user={user} setUser={setUser} startDate={startDate} setStartDate={setStartDate}/>}/>}
         </Routes>
       </div>
     </Router>

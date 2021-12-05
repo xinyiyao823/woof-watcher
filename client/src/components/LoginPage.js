@@ -4,9 +4,6 @@ import LoginNavbar from './LoginNavbar'
 import styled from 'styled-components';
 // import { IoPaw } from 'react-icons/io5';
 
-
-
-
 function Login({user, setUser}) {
     const [showLogin, setShowLogin] = useState(false );
 

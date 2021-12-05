@@ -8,8 +8,7 @@ import Homepage from './components/Homepage'
 import AppointmentList from './components/AppointmentList'
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
-
-
+import { parseISO } from 'date-fns'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -24,7 +23,7 @@ const App = () => {
       .then(user => setUser(user))
     }, [])
 
-    console.log(user)
+    console.log(startDate)
   
   return (
     <Router>

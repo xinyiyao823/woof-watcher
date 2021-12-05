@@ -15,6 +15,11 @@ class AppointmentsController < ApplicationController
         end
     end
 
+    def update 
+        appointment = Appointment.find(params[:id])
+        appointment.update(params[:date])
+    end
+
     def destroy 
         appointment = Appointment.find(params[:id])
         appointment.destroy

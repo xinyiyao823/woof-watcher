@@ -8,24 +8,17 @@ import Homepage from './components/Homepage'
 import AppointmentList from './components/AppointmentList'
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
-import { parseISO } from 'date-fns'
 
 const App = () => {
   const [user, setUser] = useState(null)
-  // const [appointment, setAppointments] = useState([])
   const [startDate, setStartDate] = useState(
     (setHours(setMinutes(new Date(), 0), 9))
-    //.toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})
   );
   
     useEffect(() => {
       fetch('/me')
       .then(r => r.json())
-      .then(user => 
-        {
-          setUser(user)
-          console.log(user)
-        })
+      .then(user =>  setUser(user))
     }, [])
 
     

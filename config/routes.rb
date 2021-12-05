@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :appointments, only: [:index, :create, :destroy]
+  resources :appointments, only: [:index, :create, :update, :destroy]
   resources :sitters, only: [:index, :show]
   resources :users 
 

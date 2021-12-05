@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import AppointmentCalendar from './AppointmentCalendar'
 import styled from 'styled-components';
 
-import { parseISO } from 'date-fns'
-import Moment from 'moment';
 
-
-function Modal({ sitter_id, modal, setModal, user, setUser, setAppointments, startDate, setStartDate,}) {
+function Modal({ sitter_id, modal, setModal, user, setUser, startDate, setStartDate,}) {
   
   
     const toggleModal = () => {

@@ -5,6 +5,7 @@ class CreateSitters < ActiveRecord::Migration[6.1]
       t.integer :hourly_rate
       t.string :location
 
+
       t.timestamps
     end
   end

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import Modal from '../Modal';
 import SitterRating from '../SitterRating';
+import ReviewInterface from '../reviews/ReviewInterface';
 // import { IoPaw } from 'react-icons/io5';
 
 
@@ -20,8 +21,10 @@ function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointm
             <h3>Rate: ${hourly_rate}/hr</h3>
             <h3>Location: {location}</h3>
             <Button onClick={handleClick}>Book Appointment <strong>🐾</strong></Button>
-            <SitterRating />
+            {/* <SitterRating /> */}
+            <ReviewInterface sitter_id={sitter_id}/>
             {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}
+            
         </SitterDiv>
     )
 }

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 function AppointmentList({user, setUser, startDate, setStartDate}) {
-  // console.log(startDate)
+
     const navigate = useNavigate()
 
     useEffect(() => {

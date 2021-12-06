@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 
 const AppointmentCalendar = ({startDate, setStartDate}) => {
-    // console.log(startDate)
+
     const filterPassedTime = (time) => {
       const currentDate = new Date();
       const selectedDate = new Date(time);

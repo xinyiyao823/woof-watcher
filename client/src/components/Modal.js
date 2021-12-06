@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import AppointmentCalendar from './AppointmentCalendar'
+import AppointmentCalendar from './appointments/AppointmentCalendar'
 import styled from 'styled-components';
 
 
@@ -45,7 +45,6 @@ function Modal({ sitter_id, modal, setModal, user, setUser, startDate, setStartD
         <div
         className="modal-content"
         onSubmit={handleSubmit}
-        
         >
           <div className="titleCloseBtn">
             <button onClick={() => {setModal(false)}}>X</button>

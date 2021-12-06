@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Appointment from './Appointment'
+import Appointment from '../appointments/Appointment'
 import styled from 'styled-components'
 import { BiArrowBack } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'

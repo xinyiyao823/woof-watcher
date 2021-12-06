@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import Modal from './Modal';
-import SitterRating from './SitterRating';
+import Modal from '../Modal';
+import SitterRating from '../SitterRating';
 // import { IoPaw } from 'react-icons/io5';
 
 

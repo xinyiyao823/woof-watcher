@@ -2,10 +2,10 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginPage from './components/LoginPage'
+import LoginPage from './components/login/LoginPage'
 import SignUpForm from './components/SignUpForm'
 import Homepage from './components/Homepage'
-import AppointmentList from './components/AppointmentList'
+import AppointmentList from './components/appointments/AppointmentList'
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 

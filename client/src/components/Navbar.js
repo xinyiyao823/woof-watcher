@@ -34,7 +34,7 @@ function Navbar({user, setUser}) {
 export default Navbar
 
 const Nav = styled.div`
-    background-color: maroon;
+    background-color: #AF5B5B;
     display: flex;
     justify-content: space-between;
 `
@@ -47,6 +47,7 @@ const Button = styled.button`
     font-size: 15px;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
+    background-color: #D8DBE2;
 `
 
 const Span = styled.span`

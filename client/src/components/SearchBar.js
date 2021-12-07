@@ -28,14 +28,15 @@ const Button = styled.button`
     font-color: white;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
+    background-color: #F0E7D8;
 `
 
 const Input = styled.input`
-  margin: 5px;
-  padding: 10px;
-  border-radius: 30px;
-  border: none;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 30px;
+    border: none;
 `
 const Label = styled.label`
-  font-family: 'Fuzzy Bubbles', cursive;
+    font-family: 'Fuzzy Bubbles', cursive;
 `

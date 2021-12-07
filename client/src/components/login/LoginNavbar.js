@@ -23,7 +23,7 @@ function LoginNavbar({showLogin, setShowLogin}) {
 export default LoginNavbar
 
 const Nav = styled.div`
-    background-color: maroon;
+    background-color: #AF5B5B;
     display: flex;
 `
 
@@ -36,4 +36,6 @@ const Button = styled.button`
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     font-size: 17px;
+    ${'' /* background-color: #F0E7D8; */}
+    background-color: #EFD9CE;
 `

@@ -80,6 +80,7 @@ const Button = styled.button`
     font-size: 18px;
     padding: 10px;
     font-family: 'Fuzzy Bubbles', cursive;
+    background-color: #EFD9CE;
 `
 const Input = styled.input`
   margin: 10px;
@@ -90,4 +91,5 @@ const Input = styled.input`
 const Label = styled.label`
   font-family: 'Fuzzy Bubbles', cursive;
   font-size: 23px;
+  font-color: black;
 `

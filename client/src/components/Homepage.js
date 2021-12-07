@@ -62,6 +62,8 @@ const Button = styled.button`
     font-size: 15px;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
+    ${'' /* background-color: #F0E7D8; */}
+    background-color: #EE9480;
 `
 
 

@@ -4,7 +4,7 @@
 
 .App {
   text-align: center;
-  background-color: aliceblue;
+  background-color: #F3EFE0;
   
 }
 
@@ -114,7 +114,7 @@
 }
 
 .paw-print-container {
-  background: aliceblue;
+  background: #F3EFE0;
   margin-left: 400px;
   margin-bottom: 400px;
   height: 700px;
@@ -216,7 +216,7 @@
 
 .inner-main-paw-print {
   background: pink;
-  color: white;
+  color: black;
   width: 88%;
   height: 88%;
   border-radius: 80%;

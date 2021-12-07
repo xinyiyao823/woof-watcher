@@ -15,7 +15,7 @@ function DeleteConfirmation({ modal, setModal, toggleModal, handleClick}) {
                 <Button onClick={handleClick}>
                   Yes, Cancel
                 </Button>
-                {/* <Button onClick={() => setModal(false)}>Nevermind, keep it</Button> */}
+                <Button onClick={() => setModal(false)}>Nevermind, keep it</Button>
               </div>
           </div>
           )

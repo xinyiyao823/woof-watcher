@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users 
   resources :reviews
   resources :sitters, only: [:show] do 
-    resources :reviews, only: [:index]
+    resources :reviews, only: [:index, :create]
   end
   
   post "/signup", to: "users#create"

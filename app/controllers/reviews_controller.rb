@@ -14,4 +14,19 @@ class ReviewsController < ApplicationController
         review = Review.find(params[:id])
         render json: review, status: :ok
     end
+
+    def create 
+        review = Review.create(review_params)
+        if review.valid?
+            render json: review, status: :created
+        else
+            render json: { error: "Can't create review" }, status: :unprocessable_entity
+        end
+    end
+
+    private 
+
+    def review_params
+        params.permit(:review, :user_id, :sitter_id)
+    end
 end

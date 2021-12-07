@@ -1,9 +1,10 @@
 import React from 'react'
+import SitterRating from '../SitterRating'
 
 function Review({review}) {
     return (
         <div>
-            <h3>Leave a review!</h3>
+           
             {review}
         </div>
     )

@@ -14,6 +14,7 @@ function Homepage({user, setUser, appointment, setAppointments, startDate, setSt
     const [search, setSearch] = useState("")
     const [sortPrice, setSortPrice] = useState(null);
     const navigate = useNavigate();
+    
 
     useEffect(() => {
         dispatch(fetchSitters('/sitters'))
@@ -29,10 +30,10 @@ function Homepage({user, setUser, appointment, setAppointments, startDate, setSt
 
     const sortedSitters = [...sitters].sort((sitter1, sitter2) => {
         if (sortPrice === "Low") {
-             return sitter1.hourly_rate - sitter2.hourly_rate
-        } else { 
-            return sitter2.hourly_rate - sitter1.hourly_rate
-        }
+             return sitter1.hourly_rate - sitter2.hourly_rate;
+        } 
+        // return sitter2.hourly_rate - sitter1.hourly_rate;
+        // }
     }) 
 
     const searchedSitters = sortedSitters.filter(sitter => {

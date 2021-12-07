@@ -33,7 +33,7 @@ export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
             onChange={handleSortChange}
           >
             <MenuItem value="Low">$ Low to High</MenuItem>
-            <MenuItem value="High">$ High to Low</MenuItem>
+            {/* <MenuItem value="High">$ High to Low</MenuItem> */}
           </Select>
         </FormControl>
       </Label>

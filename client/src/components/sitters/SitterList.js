@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 function SitterList({searchedSitters, user, setUser, appointment, setAppointments, startDate, setStartDate}) {
     
+    
     return (
         <SitterListDiv>
             {searchedSitters.map(sitter => <Sitter 

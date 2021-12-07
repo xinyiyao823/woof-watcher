@@ -1,11 +1,14 @@
 import React from 'react'
 import Review from './Review'
 
-function ReviewList({reviews}) {
+function ReviewList({reviews, showReviews}) {
+    
+    
     return (
-        <div>
+        showReviews ? 
+        (<div>
             {reviews.map(review => <Review review={review.review}/>)}
-        </div>
+        </div>) : null
     )
 }
 

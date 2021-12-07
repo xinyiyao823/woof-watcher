@@ -10,18 +10,14 @@ import Avatar from 'react-avatar';
 function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointment, setAppointments, startDate, setStartDate,}) {
     const [modal, setModal] = useState(false);
     const [value, setValue] = useState([]);
-    
 
     const handleClick = () => {
         setModal(true)
     }
 
     const ratingSum = (a, b) => a + b;
-    // let ratingAverage = (value.reduce(ratingSum)) / value.length
     const ratingAverage = (value.length >= 1)  ? ([...value].reduce(ratingSum)) / value.length : 0
-    console.log(ratingAverage)
-    console.log(value)
-    
+ 
     return (
         <SitterDiv>
             <Avatar 
@@ -64,7 +60,7 @@ const Button = styled.button`
     margin: 15px;
     padding: 10px;
     border-radius: 30px;
-    background-color: #EFD9CE;
+    background-color: #DAA49A;
     border: none;
     font-size: 15px;
     font-color: white;

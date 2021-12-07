@@ -37,5 +37,5 @@ const Button = styled.button`
     font-color: white;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
-    background-color: #EFD9CE;
+    background-color: #DAA49A;
 `

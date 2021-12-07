@@ -47,7 +47,7 @@ const Button = styled.button`
     font-size: 15px;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
-    background-color: #D8DBE2;
+    background-color: #EFD9CE;
 `
 
 const Span = styled.span`

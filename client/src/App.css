@@ -97,19 +97,17 @@
 
 .cancel {
   display: flex;
-  padding: 10px;
-  
+  padding: 10px; 
 }
 
 .create {
-  display: flex;
-  
+  display: flex; 
 }
 
 .modal-buttons {
   display: flex;
   align-items: center;
-  padding-left: 125px;
+  padding-left: 80px;
   padding-top: 280px;
 }
 
@@ -256,7 +254,7 @@ body.active-modal {
 }
 .modal-content {
   position: absolute;
-  top: -200px;
+  top: -150px;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
@@ -274,3 +272,19 @@ body.active-modal {
   padding: 5px 7px;
 }
 
+.delete-modal {
+
+}
+
+.delete-modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}

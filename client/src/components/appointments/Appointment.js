@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { parseISO } from 'date-fns'
-import Modal from '../Modal'
-import EditAppointment from '../EditAppointment'
+// import EditAppointment from '../EditAppointment'
 import DeleteConfirmation from '../DeleteConfirmation'
 
 function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) {
@@ -11,7 +10,7 @@ function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) 
     
     const toggleModal = () => {
         setModal(!modal);
-      };
+    };
     
       if(modal) {
         document.body.classList.add('active-modal')
@@ -19,30 +18,29 @@ function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) 
         document.body.classList.remove('active-modal')
       }
 
-    const handleEdit = (e) => {
-        // setEditing(true)
-        setModal(true)
-    }
+    // const handleEdit = (e) => {
+    //     setModal(true)
+    // }
 
 
     const handleClick = () => {
-        setModal(true)
-        handleDeleteAppt(appointment)
-        if (!appointment) {
-            console.log('appt not deleted')
-        } else {
-            setModal(false)
-        }
+        //  setModal(true)
+         handleDeleteAppt(appointment)
+            if (!appointment) {
+                console.log('appt not deleted')
+            } else {
+                setModal(false)
+            }
     }
     
-    // let dateString = parseISO(appointment.date).toLocaleString()
+
     let dateString = parseISO(appointment.date).toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})
 
     return (
         <ApptDiv>
             <h3>Date: {dateString}</h3>
             <h3>Dog-Sitter: {appointment.sitter.name}</h3>
-            <Button onClick={handleEdit}>Edit</Button>
+            {/* <Button onClick={handleEdit}>Edit</Button> */}
             <Button onClick={() => setModal(true)}>Cancel</Button>
             {/* <EditAppointment startDate={startDate} setStartDate={setStartDate}/> */}
             <DeleteConfirmation handleDeleteAppt={handleDeleteAppt} modal={modal} setModal={setModal} toggleModal={toggleModal} handleClick={handleClick}/>
@@ -59,8 +57,6 @@ const ApptDiv = styled.div`
     margin: 20px;
     width: 500px;
     font-family: 'Fuzzy Bubbles', cursive;
-
-    
 `
 
 const Button = styled.button`
@@ -72,5 +68,5 @@ const Button = styled.button`
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     font-size: 15px;
-    background-color: #AF5B5B;
+    background-color: #DAA49A;
 `

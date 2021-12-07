@@ -28,7 +28,7 @@ const Button = styled.button`
     font-color: white;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
-    background-color: #F0E7D8;
+    background-color: #DAA49A;
 `
 
 const Input = styled.input`

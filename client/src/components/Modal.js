@@ -95,5 +95,5 @@ const Button = styled.button`
 `
 
 const P = styled.p`
-font-size: 15px;
+font-size: 16px;
 `

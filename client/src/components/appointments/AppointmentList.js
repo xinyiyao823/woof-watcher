@@ -28,7 +28,7 @@ function AppointmentList({user, setUser, startDate, setStartDate}) {
        })
     }
     console.log(user)
-    // console.log(appointment)
+
 
     return (
         <div>
@@ -53,4 +53,8 @@ const Button = styled.button`
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     font-size: 15px;
+    background-color: #DAA49A;
+`
+const Div = styled.div`
+  background-color: #DAA49A;
 `

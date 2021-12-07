@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
+
 function SignUpForm({user, setUser}) {
 
   const [name, setName] = useState("");
@@ -100,6 +101,7 @@ const Button = styled.button`
     font-size: 18px;
     padding: 10px;
     font-family: 'Fuzzy Bubbles', cursive;
+    background-color: #DAA49A;
 `
 const Input = styled.input`
   margin: 10px;

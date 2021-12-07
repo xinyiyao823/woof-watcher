@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import Modal from '../Modal';
 import ReviewInterface from '../reviews/ReviewInterface';
- import { GiJumpingDog } from 'react-icons/gi';
 import Rating from '@mui/material/Rating';
 import Avatar from 'react-avatar';
 

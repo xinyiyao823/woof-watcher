@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { parseISO } from 'date-fns'
-// import EditAppointment from '../EditAppointment'
+import EditAppointment from '../EditAppointment'
 import DeleteConfirmation from '../DeleteConfirmation'
 
 function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) {
@@ -18,9 +18,9 @@ function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) 
         document.body.classList.remove('active-modal')
       }
 
-    // const handleEdit = (e) => {
-    //     setModal(true)
-    // }
+    const handleEdit = (e) => {
+        setModal(true)
+    }
 
 
     const handleClick = () => {
@@ -40,9 +40,9 @@ function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) 
         <ApptDiv>
             <h3>Date: {dateString}</h3>
             <h3>Dog-Sitter: {appointment.sitter.name}</h3>
-            {/* <Button onClick={handleEdit}>Edit</Button> */}
+            <Button onClick={handleEdit}>Edit</Button>
             <Button onClick={() => setModal(true)}>Cancel</Button>
-            {/* <EditAppointment startDate={startDate} setStartDate={setStartDate}/> */}
+            <EditAppointment startDate={startDate} setStartDate={setStartDate}/>
             <DeleteConfirmation handleDeleteAppt={handleDeleteAppt} modal={modal} setModal={setModal} toggleModal={toggleModal} handleClick={handleClick}/>
         </ApptDiv>
     )

@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import Modal from '../Modal';
 import ReviewInterface from '../reviews/ReviewInterface';
-// import { IoPaw } from 'react-icons/io5';
+ import { GiJumpingDog } from 'react-icons/gi';
 import Rating from '@mui/material/Rating';
+import Avatar from 'react-avatar';
 
 
 function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointment, setAppointments, startDate, setStartDate,}) {
     const [modal, setModal] = useState(false);
-    const [value, setValue] = useState([0]);
+    const [value, setValue] = useState([]);
     
 
     const handleClick = () => {
@@ -16,19 +17,27 @@ function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointm
     }
 
     const ratingSum = (a, b) => a + b;
-    let ratingAverage = (value.reduce(ratingSum)) / value.length
+    // let ratingAverage = (value.reduce(ratingSum)) / value.length
+    const ratingAverage = (value.length >= 1)  ? ([...value].reduce(ratingSum)) / value.length : 0
     console.log(ratingAverage)
     console.log(value)
     
     return (
         <SitterDiv>
+            <Avatar 
+            name={name} 
+            size="50" 
+            round={true}    
+            />
             <h2><strong>{name}</strong></h2>
             <h3>Rate: ${hourly_rate}/hr</h3>
             <h3>Location: {location}</h3>
-            <Button onClick={handleClick}>Book Appointment <strong>🐾</strong></Button>
+            <Button onClick={handleClick}>Book Appointment <Span>🐾</Span>
+
+            </Button>
             <Rating 
             name="read-only" 
-            value={(value.length >= 1)  ? ratingAverage : value[1]} 
+            value={ratingAverage} 
             precision={0.5}
             readOnly    
             />
@@ -41,8 +50,8 @@ function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointm
 export default Sitter
 
 const SitterDiv = styled.div`
-    border: 3px solid maroon;
-    border-radius: 15%;
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    background-color: white;
     width: 15%;
     margin: 25px;
     padding: 10px;
@@ -55,9 +64,13 @@ const Button = styled.button`
     margin: 15px;
     padding: 10px;
     border-radius: 30px;
+    background-color: #AF5B5B;
     border: none;
     font-size: 15px;
     font-color: white;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
+`
+const Span = styled.span`
+    font-size: 20px;
 `

@@ -1,10 +1,8 @@
 import React from 'react'
-import SitterRating from '../SitterRating'
 
 function Review({review}) {
     return (
-        <div>
-           
+        <div style={{transition: 'all 0.5s ease-in'}}>
             {review}
         </div>
     )

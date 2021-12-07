@@ -34,7 +34,10 @@ function NewReview({addNewReview, user, sitter_id, value, setValue}) {
     return (
         <div>
             <h1 onClick={() => setReviewButton(!reviewButton)}> <MdAddComment /> </h1>
-             {reviewButton ? (<form onSubmit={handleSubmit}>
+             {reviewButton ? (
+                 <form 
+                 onSubmit={handleSubmit} 
+                 style={{transition: "transition-timing-function: ease-in"}}>
              <h4>Leave a rating & review!</h4>
                 <input
                     id="review"

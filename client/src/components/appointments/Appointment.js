@@ -53,7 +53,9 @@ function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) 
 export default Appointment
 
 const ApptDiv = styled.div`
-    border: 1px solid;
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    background-color: white;
+    padding: 15px;
     margin: 20px;
     width: 500px;
     font-family: 'Fuzzy Bubbles', cursive;
@@ -70,4 +72,5 @@ const Button = styled.button`
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     font-size: 15px;
+    background-color: #AF5B5B;
 `

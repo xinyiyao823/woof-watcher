@@ -57,7 +57,6 @@ function LoginForm({user, setUser}) {
             variant="fill" 
             color="primary" 
             type="submit"
-            // onClick={() => navigate('/home')}
             >
               {isLoading ? "Loading..." : <GiJumpingDog size={40}/> }
             </Button>
@@ -72,11 +71,10 @@ const Button = styled.button`
     margin: 15px;
     border-radius: 30px;
     border: none;
-    font-color: white;
     font-size: 18px;
     padding: 10px;
     font-family: 'Fuzzy Bubbles', cursive;
-    background-color: #F2F7F2;
+    background-color: #DAA49A;
 `
 const Input = styled.input`
   margin: 10px;

@@ -34,5 +34,5 @@ const Button = styled.button`
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     font-size: 15px;
-    background-color: maroon;
+    background-color: #DAA49A;
 `

@@ -13,7 +13,7 @@ function SearchBar({search, setSearch}) {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
-            <Button>{<BsSearch />}</Button>
+            <Button>{<BsSearch size={18} />}</Button>
         </div>
     )
 }
@@ -21,8 +21,8 @@ function SearchBar({search, setSearch}) {
 export default SearchBar
 
 const Button = styled.button`
-    margin: 12px;
-    padding: 8px;
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
     border-radius: 30px;
     border: none;
     font-color: white;
@@ -32,11 +32,12 @@ const Button = styled.button`
 `
 
 const Input = styled.input`
-    margin: 5px;
+    margin-top: 20px;
     padding: 10px;
     border-radius: 30px;
     border: none;
 `
 const Label = styled.label`
     font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 18px;
 `

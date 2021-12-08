@@ -43,5 +43,6 @@ export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
 
 const Label = styled.label`
   font-family: 'Fuzzy Bubbles', cursive;
+  font-size: 18px;
 `
 

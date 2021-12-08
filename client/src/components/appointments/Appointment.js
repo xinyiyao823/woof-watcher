@@ -40,9 +40,9 @@ function Appointment({ appointment, handleDeleteAppt, startDate, setStartDate}) 
         <ApptDiv>
             <h3>Date: {dateString}</h3>
             <h3>Dog-Sitter: {appointment.sitter.name}</h3>
-            <Button onClick={handleEdit}>Edit</Button>
+            {/* <Button onClick={handleEdit}>Edit</Button> */}
             <Button onClick={() => setModal(true)}>Cancel</Button>
-            <EditAppointment startDate={startDate} setStartDate={setStartDate}/>
+            {/* <EditAppointment startDate={startDate} setStartDate={setStartDate}/> */}
             <DeleteConfirmation handleDeleteAppt={handleDeleteAppt} modal={modal} setModal={setModal} toggleModal={toggleModal} handleClick={handleClick}/>
         </ApptDiv>
     )
@@ -52,9 +52,9 @@ export default Appointment
 
 const ApptDiv = styled.div`
     box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
-    background-color: white;
+    background-color: #F2F7F2;
     padding: 15px;
-    margin: 20px;
+    justify-content: center;
     width: 500px;
     font-family: 'Fuzzy Bubbles', cursive;
 `

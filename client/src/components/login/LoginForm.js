@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {useNavigate} from "react-router-dom";
 import styled from 'styled-components'
+import { GiJumpingDog } from 'react-icons/gi'
 
 
 function LoginForm({user, setUser}) {
@@ -58,13 +59,8 @@ function LoginForm({user, setUser}) {
             type="submit"
             // onClick={() => navigate('/home')}
             >
-              {isLoading ? "Loading..." : "Login"}
+              {isLoading ? "Loading..." : <GiJumpingDog size={40}/> }
             </Button>
-            
-            {/* {errors.map((err) => (
-              <Error key={err}>{err}</Error>
-            ))} */}
-            {console.log(errors.errors)}
           </form>
         </div>
     )
@@ -80,7 +76,7 @@ const Button = styled.button`
     font-size: 18px;
     padding: 10px;
     font-family: 'Fuzzy Bubbles', cursive;
-    background-color: #EFD9CE;
+    background-color: #F2F7F2;
 `
 const Input = styled.input`
   margin: 10px;

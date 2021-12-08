@@ -9,9 +9,11 @@
 }
 
 .dropdown {
-  width: 7%;
-  height: 5%;
+  width: 5%;
+  height: 1%;
+  margin-top: none;
   margin-left: 50px;
+  
 }
 
 .logout {
@@ -146,7 +148,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: pink;
+  color: #FFD7D5;
   /* border-radius: 70% 70% 10% 10%; */
   border-radius: 50%;
   
@@ -171,14 +173,14 @@
 }
 
 .paw1-toe-beans, .paw4-toe-beans {
-  background: pink;
+  background: #FFD7D5;
   width: 105px;
   height: 135px;
   border-radius: 50%;
 }
 
 .paw2-toe-beans, .paw3-toe-beans {
-  background: pink;
+  background: #FFD7D5;
   width: 140px;
   height: 200px;
   border-radius: 50%;
@@ -213,7 +215,7 @@
 }
 
 .inner-main-paw-print {
-  background: pink;
+  background: #FFD7D5;
   color: black;
   width: 88%;
   height: 88%;

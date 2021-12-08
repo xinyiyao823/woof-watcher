@@ -31,11 +31,11 @@ function AppointmentList({user, setUser, startDate, setStartDate}) {
 
 
     return (
-        <div>
+        <Div>
             <Button onClick={() => navigate('/home')}><BiArrowBack /></Button>
             <Header>{user.name}'s Appointments</Header>
             {user.appointments.map(appointment => <Appointment appointment={appointment} handleDeleteAppt={handleDeleteAppt} startDate={startDate} setStartDate={setStartDate}/>)}
-        </div>
+        </Div>
     )
 }
 
@@ -56,5 +56,6 @@ const Button = styled.button`
     background-color: #DAA49A;
 `
 const Div = styled.div`
-  background-color: #DAA49A;
+
+  margin-left: 10px;
 `

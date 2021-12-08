@@ -3,8 +3,9 @@ import AppointmentCalendar from './appointments/AppointmentCalendar'
 import styled from 'styled-components';
 
 
-function Modal({ sitter_id, modal, setModal, user, setUser, startDate, setStartDate,}) {
-  
+function EditModal({ sitter_id, user, setUser, startDate, setStartDate,editingAppointment, setEditingAppointment}) {
+    const [modal, setModal] = useState(false);
+
   
     const toggleModal = () => {
       setModal(!modal);
@@ -83,7 +84,7 @@ function Modal({ sitter_id, modal, setModal, user, setUser, startDate, setStartD
   );
 }
 
-export default Modal;
+export default EditModal;
 
 const Button = styled.button`
     padding: 5px;

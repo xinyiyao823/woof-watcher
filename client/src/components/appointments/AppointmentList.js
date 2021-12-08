@@ -32,7 +32,7 @@ function AppointmentList({user, setUser, startDate, setStartDate}) {
 
     return (
         <Div>
-            <Button onClick={() => navigate('/home')}><BiArrowBack /></Button>
+            <Button onClick={() => navigate('/home')}><BiArrowBack size={25}/></Button>
             <Header>{user.name}'s Appointments</Header>
             {user.appointments.map(appointment => <Appointment appointment={appointment} handleDeleteAppt={handleDeleteAppt} startDate={startDate} setStartDate={setStartDate}/>)}
         </Div>
@@ -49,7 +49,7 @@ const Button = styled.button`
     border-radius: 30px;
     border: none;
     font-color: white;
-    padding: 10px;
+    padding: 5px 5px 5px 5px;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
     font-size: 15px;

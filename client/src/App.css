@@ -97,8 +97,9 @@
 .modal-buttons {
   display: flex;
   align-items: center;
-  padding-right: 10px;
+  
   padding-top: 280px;
+  /* justify-content: center; */
   justify-content: space-evenly;
 }
 

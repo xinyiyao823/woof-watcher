@@ -56,5 +56,6 @@ const Button = styled.button`
     background-color: #DAA49A;
 `
 const Div = styled.div`
-  margin-left: 10px;
+  margin-left: 20px;
+  
 `

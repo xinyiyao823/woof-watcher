@@ -24,6 +24,7 @@ export default LoginNavbar
 
 const Nav = styled.div`
     background-color: #AF5B5B;
+    ${'' /* background-color: #8C5F66 */}
     display: flex;
 `
 

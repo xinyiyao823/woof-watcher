@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Review({review}) {
+function Review({review, user}) {
     return (
         <div>
-            {review}
+            {`${user.name} - ${review}`}
         </div>
     )
 }

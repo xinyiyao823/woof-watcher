@@ -9,7 +9,7 @@
 }
 
 .dropdown {
-  width: 5%;
+  width: 10%;
   height: 1%;
   margin-top: none;
   margin-left: 50px;
@@ -74,6 +74,7 @@
   align-items: center;
   font-size: 1.7rem;
   text-align: center;
+  margin-right: 40px;
 
 }
 
@@ -84,33 +85,21 @@
   align-items: center;
 }
 
-/* .modalContainer .footer button {
-  width: 60px;
-  height: 25px;
-  margin: 10px;
-  margin-top: 50px;
-  border: none;
-  background-color: cornflowerblue;
-  color: white;
-  border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
-} */
-
 .cancel {
   display: flex;
   padding: 10px; 
 }
 
 .create {
-  display: flex; 
+  display: flex;
 }
 
 .modal-buttons {
   display: flex;
   align-items: center;
-  padding-left: 80px;
+  padding-right: 10px;
   padding-top: 280px;
+  justify-content: space-evenly;
 }
 
 .paw-print-container {

@@ -1,14 +1,14 @@
 import React from 'react'
 import Review from './Review'
-import styled from 'styled-components'
 
-function ReviewList({reviews, showReviews}) {
+
+function ReviewList({reviews, showReviews, user}) {
     
     
     return (
         showReviews ? 
         (<div>
-            {reviews.map(review => <Review review={review.review}/>)}
+            {reviews.map(review => <Review user={user} review={review.review}/>)}
         </div>) : null
     )
 }

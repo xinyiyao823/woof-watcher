@@ -37,7 +37,9 @@ const Input = styled.input`
     border-radius: 30px;
     border: none;
 `
+
 const Label = styled.label`
     font-family: 'Fuzzy Bubbles', cursive;
     font-size: 18px;
+    margin-right: 10px;
 `

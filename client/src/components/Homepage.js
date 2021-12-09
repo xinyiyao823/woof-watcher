@@ -18,9 +18,6 @@ function Homepage({user, setUser, appointment, setAppointments, startDate, setSt
 
     useEffect(() => {
         dispatch(fetchSitters('/sitters'))
-        // fetch("/sitters")
-        // .then(r => r.json())
-        // .then(data => showSitters(data))
     }, [])
 
     const sitters = useSelector(state => state.sitters)
@@ -43,9 +40,10 @@ function Homepage({user, setUser, appointment, setAppointments, startDate, setSt
     return (
         <div>
             <Navbar user={user} setUser={setUser}/>
+            
             <SearchBar search={search} setSearch={setSearch}/>
-            <Button onClick={() => navigate('/appointments')}>View My Appointments</Button>
             <DropDown sitterRates={sitterRates} sortPrice={sortPrice} setSortPrice={setSortPrice} />
+            <Button onClick={() => navigate('/appointments')}>View My Appointments</Button>
             <SitterList sitters={sitters} searchedSitters={searchedSitters} sortedSitters={sortedSitters} user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>    
         </div>
     )

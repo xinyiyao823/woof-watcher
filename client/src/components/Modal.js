@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import AppointmentCalendar from './appointments/AppointmentCalendar'
 import styled from 'styled-components';
 
@@ -61,21 +61,21 @@ function Modal({ sitter_id, modal, setModal, user, setUser, startDate, setStartD
             </div>
           </div>
           <div className="modal-buttons">
+          <div className="create">
+              <Button 
+              type="submit"
+              style={{background: '#629460'}}
+              onClick={handleSubmit}
+              >Book</Button>
+            </div>
             <div className="cancel">
               <Button
                 onClick={() => {setModal(false);
                 }}
-                style={{background: 'red'}}
+                style={{background: '#A23E48'}}
                 id="cancelBtn"
               >Cancel</Button>
               </div>
-              <div className="create">
-              <Button 
-              type="submit"
-              style={{background: 'green'}}
-              onClick={handleSubmit}
-              >Create</Button>
-            </div>
           </div>
         </div>
       </div>
@@ -86,14 +86,15 @@ function Modal({ sitter_id, modal, setModal, user, setUser, startDate, setStartD
 export default Modal;
 
 const Button = styled.button`
-    padding: 5px;
+    padding: 8px;
     border-radius: 30px;
     border: none;
     font-family: 'Fuzzy Bubbles', cursive;
     cursor: pointer;
-    text-align: center
+    text-align: center;
+    justify-content: space-evenly;
 `
 
 const P = styled.p`
-font-size: 16px;
+font-size: 17px;
 `

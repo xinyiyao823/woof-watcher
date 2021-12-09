@@ -59,6 +59,7 @@ const ApptDiv = styled.div`
     font-family: 'Fuzzy Bubbles', cursive;
     margin-bottom: 20px;
     margin-left: 20px;
+\
 `
 
 const Button = styled.button`

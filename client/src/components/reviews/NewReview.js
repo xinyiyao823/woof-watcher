@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import { MdAddComment } from 'react-icons/md'
+import { MdOutlineAddComment } from 'react-icons/md'
 import SitterRating from '../SitterRating'
+import styled from 'styled-components'
 
 
 function NewReview({addNewReview, user, sitter_id, value, setValue}) {
@@ -33,13 +34,13 @@ function NewReview({addNewReview, user, sitter_id, value, setValue}) {
     }
     return (
         <div>
-            <h1 onClick={() => setReviewButton(!reviewButton)}> <MdAddComment /> </h1>
+            <h1 onClick={() => setReviewButton(!reviewButton)}> <MdOutlineAddComment /> </h1>
              {reviewButton ? (
                  <form 
                  onSubmit={handleSubmit} 
-                 style={{transition: "transition-timing-function: ease-in"}}>
+                 >
              <h4>Leave a rating & review!</h4>
-                <input
+                <Input
                     id="review"
                     value={newReview}
                     // placeholder="comment:"
@@ -47,14 +48,16 @@ function NewReview({addNewReview, user, sitter_id, value, setValue}) {
                     className="addReview"
                 />
                 <SitterRating value={value} setValue={setValue} />
-                {/* <button
-                disabled={!newReview} 
-                className="create"> 
-                🦴 
-                </button> */}
             </form>) : null }
         </div>
     )
 }
 
 export default NewReview
+
+const Input = styled.input`
+    margin-top: none;
+    padding: 5px;
+    border-radius: 30px;
+    border: 1px solid;
+`

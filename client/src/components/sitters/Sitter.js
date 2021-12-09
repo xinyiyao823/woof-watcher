@@ -9,6 +9,7 @@ import Avatar from 'react-avatar';
 function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointment, setAppointments, startDate, setStartDate,}) {
     const [modal, setModal] = useState(false);
     const [value, setValue] = useState([]);
+    const [reviews, setReviews] = useState([]);
 
     const handleClick = () => {
         setModal(true)
@@ -27,16 +28,14 @@ function Sitter({sitter_id, name, hourly_rate, location, user, setUser, appointm
             <h2><strong>{name}</strong></h2>
             <h3>Rate: ${hourly_rate}/hr</h3>
             <h3>Location: {location}</h3>
-            <Button onClick={handleClick}>Book Appointment <Span>🐾</Span>
-
-            </Button>
             <Rating 
             name="read-only" 
             value={ratingAverage} 
             precision={0.5}
             readOnly    
-            />
-            <ReviewInterface sitter_id={sitter_id} user={user} value={value} setValue={setValue}/>
+            /> {`(${reviews.length})`}
+            <Button onClick={handleClick}>Book Appointment <Span>🐾</Span></Button>
+            <ReviewInterface sitter_id={sitter_id} user={user} value={value} setValue={setValue} reviews={reviews} setReviews={setReviews}/>
             {modal && <Modal sitter_id={sitter_id} modal={modal} setModal={setModal} user={user} setUser={setUser} appointment={appointment} setAppointments={setAppointments} startDate={startDate} setStartDate={setStartDate}/>}
         </SitterDiv>
     )
@@ -57,7 +56,7 @@ const SitterDiv = styled.div`
 `
 const Button = styled.button`
     margin: 15px;
-    padding: 10px;
+    padding: 8px;
     border-radius: 30px;
     background-color: #DAA49A;
     border: none;

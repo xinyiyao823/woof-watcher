@@ -3,8 +3,8 @@ import ReviewList from './ReviewList'
 import NewReview from './NewReview'
 import styled from 'styled-components'
 
-function ReviewInterface({sitter_id, user, value, setValue}) {
-    const [reviews, setReviews] = useState([]);
+function ReviewInterface({sitter_id, user, value, setValue, reviews, setReviews}) {
+    // const [reviews, setReviews] = useState([]);
     const [showReviews, setShowReviews] = useState(false)
     
     useEffect(() => {
@@ -20,7 +20,7 @@ function ReviewInterface({sitter_id, user, value, setValue}) {
     return (
         <div>
             <Button onClick={() => setShowReviews(!showReviews)}>See Reviews</Button>
-            <ReviewList reviews={reviews} showReviews={showReviews}/>
+            <ReviewList reviews={reviews} showReviews={showReviews} user={user}/>
             <NewReview addNewReview={addNewReview} sitter_id={sitter_id} user={user} reviews={reviews} value={value} setValue={setValue} />
         </div>
     )

@@ -20,10 +20,10 @@ export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
   // console.log(lowToHigh)
 
   return (
-    <Box className="dropdown" sx={{ minWidth: 40 }}>
+    <Box className="dropdown" sx={{ minWidth: 40 }} >
      <Label>
       <strong>Sort By:</strong>
-        <FormControl fullWidth>
+        <FormControl fullWidth style={{background: '#EFD9CE'}}>
           <InputLabel id="demo-simple-select-label">Price</InputLabel>
           <Select
             // labelId="demo-simple-select-label"
@@ -44,5 +44,8 @@ export default function BasicSelect({sitterRates, sortPrice, setSortPrice}) {
 const Label = styled.label`
   font-family: 'Fuzzy Bubbles', cursive;
   font-size: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 10px;
 `
 

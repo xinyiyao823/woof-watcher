@@ -19,5 +19,6 @@ const SitterListDiv = styled.div`
     display: flex;
     background-color: #F3EFE0;
     flex-wrap: wrap;
+    justify-content: center;
 
 `

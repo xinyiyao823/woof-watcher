@@ -35,6 +35,7 @@ export default Navbar
 
 const Nav = styled.div`
     background-color: #AF5B5B;
+    ${'' /* background-color: #8C5F66; */}
     display: flex;
     justify-content: space-between;
 `
@@ -52,7 +53,7 @@ const Button = styled.button`
 
 const Span = styled.span`
     font-family: 'Fuzzy Bubbles', cursive;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 15px;
 `
 
